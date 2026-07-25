@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-# Only two things are editable here: the events list and the board members
-# list. Nothing else on the site (pricing, pillars, hero copy, footer, nav)
+# Three things are editable here: events, board members and membership
+# pricing. Nothing else on the site (focus areas, hero copy, footer, nav)
 # has a field here, so it cannot be touched through this admin panel.
 
 media_folder: "images/uploads"
@@ -48,3 +48,30 @@ collections:
               - { label: "Company / organisation", name: "company", widget: "string" }
               - { label: "Photo", name: "photo", widget: "image" }
               - { label: "Short bio (optional)", name: "bio", widget: "text", required: false, hint: "A couple of sentences. Shown under their name on the website." }
+
+  - name: "pricing"
+    label: "Membership Pricing"
+    label_singular: "Tier"
+    files:
+      - file: "content/pricing.json"
+        label: "Membership Tiers"
+        name: "pricing"
+        fields:
+          - label: "Tiers"
+            name: "tiers"
+            widget: "list"
+            summary: "{{name}} — {{priceDisplay}}"
+            fields:
+              - { label: "Internal ID (do not change - links the Join button to the right form)", name: "id", widget: "string", hint: "Only edit this if you know what you're doing" }
+              - { label: "Badge text (small label above the tier name)", name: "badgeLabel", widget: "string" }
+              - { label: "Badge colour style", name: "badgeStyle", widget: "select", options: ["student", "entry", "popular", "leader", "enterprise"], hint: "student=grey, entry=teal, popular=green, leader=sky blue, enterprise=blue" }
+              - { label: "Tier name", name: "name", widget: "string" }
+              - { label: "Price type", name: "priceMode", widget: "select", options: ["amount", "contact", "tbc"], hint: "amount = show a $ price, contact = show 'Contact us', tbc = show 'Price TBC'" }
+              - { label: "Price (only used if price type = amount)", name: "priceDisplay", widget: "string", required: false, hint: "Just the number, e.g. 99 or 1,650 - no dollar sign" }
+              - { label: "Billing period line", name: "period", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Features list", name: "features", widget: "list", field: { label: "Feature", name: "feature", widget: "string" } }
+              - { label: "Highlight this tier (adds the green glow / 'featured' treatment)", name: "featured", widget: "boolean", default: false }
+              - { label: "Button text", name: "ctaLabel", widget: "string" }
+              - { label: "Button action", name: "ctaType", widget: "select", options: ["join", "mailto", "disabled"], hint: "join = sends to the registration form, mailto = opens an email, disabled = greyed out button (use for 'Price TBC' tiers)" }
+              - { label: "Email address (only used if button action = mailto)", name: "ctaTarget", widget: "string", required: false, hint: "e.g. info@sctechia.com.au?subject=Enquiry" }

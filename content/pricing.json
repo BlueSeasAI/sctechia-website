@@ -1,0 +1,110 @@
+{
+  "tiers": [
+    {
+      "id": "student",
+      "badgeLabel": "Student",
+      "badgeStyle": "student",
+      "name": "Student",
+      "priceMode": "tbc",
+      "priceDisplay": "",
+      "period": "Pending board confirmation",
+      "description": "For current students studying technology, digital or a related field on the Sunshine Coast. Full access to events, community and the member directory while you study.",
+      "features": [
+        "Access to all member events",
+        "Member directory listing",
+        "Monthly industry briefings",
+        "Barside Natter networking events"
+      ],
+      "featured": false,
+      "ctaLabel": "Pricing coming soon",
+      "ctaType": "disabled",
+      "ctaTarget": ""
+    },
+    {
+      "id": "individual",
+      "badgeLabel": "Individual",
+      "badgeStyle": "entry",
+      "name": "Tech Professional",
+      "priceMode": "amount",
+      "priceDisplay": "99",
+      "period": "Annual membership • Billed once a year",
+      "description": "For individual tech professionals, founders and freelancers. Full access to events, community and the member directory.",
+      "features": [
+        "Access to all member events",
+        "Member directory listing",
+        "Monthly industry briefings",
+        "Barside Natter networking events",
+        "Discounted Tech Summit tickets"
+      ],
+      "featured": false,
+      "ctaLabel": "Join for $99/yr",
+      "ctaType": "join",
+      "ctaTarget": ""
+    },
+    {
+      "id": "business",
+      "badgeLabel": "Most Popular",
+      "badgeStyle": "popular",
+      "name": "Business Member",
+      "priceMode": "amount",
+      "priceDisplay": "660",
+      "period": "Annual membership • Includes 2 named contacts",
+      "description": "For technology businesses and digital-first companies. Two member contacts, enhanced directory profile and speaking opportunities at events.",
+      "features": [
+        "Everything in Tech Professional",
+        "2 named contacts included",
+        "Enhanced company directory profile",
+        "Priority event access & early-bird pricing",
+        "Speaking & thought leadership opportunities",
+        "Advocacy and government engagement"
+      ],
+      "featured": true,
+      "ctaLabel": "Join for $660/yr",
+      "ctaType": "join",
+      "ctaTarget": ""
+    },
+    {
+      "id": "thought-leader",
+      "badgeLabel": "Thought Leader",
+      "badgeStyle": "leader",
+      "name": "Thought Leader",
+      "priceMode": "amount",
+      "priceDisplay": "1,650",
+      "period": "Annual membership • Includes 3 named contacts",
+      "description": "For established leaders and companies wanting to shape conversations, build profile and access strategic opportunities in the Sunshine Coast digital economy.",
+      "features": [
+        "Everything in Business Member",
+        "3 named contacts included",
+        "Featured speaking position at flagship events",
+        "Thought leadership features in newsletters & reports",
+        "Industry working group & advisory access",
+        "Priority board engagement & briefings"
+      ],
+      "featured": false,
+      "ctaLabel": "Join for $1,650/yr",
+      "ctaType": "join",
+      "ctaTarget": ""
+    },
+    {
+      "id": "partner",
+      "badgeLabel": "Partner / Corporate",
+      "badgeStyle": "enterprise",
+      "name": "Alliance Partner",
+      "priceMode": "contact",
+      "priceDisplay": "",
+      "period": "Tailored partnership arrangements",
+      "description": "For organisations wanting deep engagement, co-branding, event sponsorship and strategic partnership with the Sunshine Coast tech community.",
+      "features": [
+        "Everything in Business Member",
+        "Event naming rights and sponsorship",
+        "Co-branding on Alliance materials",
+        "Board-level strategic engagement",
+        "Custom arrangements for enterprise needs"
+      ],
+      "featured": false,
+      "ctaLabel": "Get in touch",
+      "ctaType": "mailto",
+      "ctaTarget": "info@sctechia.com.au?subject=Alliance%20Partner%20Enquiry"
+    }
+  ]
+}
