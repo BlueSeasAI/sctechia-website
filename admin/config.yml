@@ -11,67 +11,70 @@ public_folder: "/images/uploads"
 
 collections:
   - name: "events"
-    label: "Events"
+    label: "📅 Events"
     label_singular: "Event"
+    description: "What's shown in the Upcoming Events section on the homepage."
     files:
       - file: "content/events.json"
-        label: "Upcoming Events"
+        label: "📅 Upcoming Events"
         name: "events"
         fields:
           - label: "Events"
             name: "events"
             widget: "list"
-            summary: "{{title}} — {{dateLabel}}"
+            summary: "🎫 {{title}} — {{dateLabel}}"
             fields:
-              - { label: "Event name", name: "title", widget: "string" }
-              - { label: "Date (as shown on the card)", name: "dateLabel", widget: "string", hint: "e.g. '16 Sep 2026 • All day' or 'Coming soon' or 'Quarterly • Evening'" }
-              - { label: "Tag", name: "tag", widget: "select", options: ["Networking", "Flagship"] }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Location", name: "location", widget: "string", hint: "e.g. 'Sunshine Coast venue TBC'" }
-              - { label: "More information link (Safe Tickets URL)", name: "moreInfoUrl", widget: "string", required: false, hint: "Leave blank if there's no ticket page yet" }
+              - { label: "🎫 Event name", name: "title", widget: "string" }
+              - { label: "📅 Date (as shown on the card)", name: "dateLabel", widget: "string", hint: "Type it exactly as you want it to read, e.g. '16 Sep 2026 • All day', 'Coming soon' or 'Quarterly • Evening'" }
+              - { label: "🏷️ Tag", name: "tag", widget: "select", options: [{ label: "🤝 Networking", value: "Networking" }, { label: "🏆 Flagship", value: "Flagship" }] }
+              - { label: "📝 Description", name: "description", widget: "text" }
+              - { label: "📍 Location", name: "location", widget: "string", hint: "e.g. 'Sunshine Coast venue TBC'" }
+              - { label: "🔗 More information link (Safe Tickets URL)", name: "moreInfoUrl", widget: "string", required: false, hint: "Leave blank if there's no ticket page yet" }
 
   - name: "board"
-    label: "Board Members"
+    label: "👥 Board Members"
     label_singular: "Board Member"
+    description: "Who's shown in the Leadership section on the homepage."
     files:
       - file: "content/board.json"
-        label: "Board Members"
+        label: "👥 Board Members"
         name: "board"
         fields:
           - label: "Members"
             name: "members"
             widget: "list"
-            summary: "{{name}} — {{role}}"
+            summary: "🧑 {{name}} — {{role}}"
             fields:
-              - { label: "Full name", name: "name", widget: "string" }
-              - { label: "Role", name: "role", widget: "string", hint: "e.g. Chair, Vice Chair, Secretary, Treasurer, Board Member" }
-              - { label: "Company / organisation", name: "company", widget: "string" }
-              - { label: "Photo", name: "photo", widget: "image" }
-              - { label: "Short bio (optional)", name: "bio", widget: "text", required: false, hint: "A couple of sentences. Shown under their name on the website." }
+              - { label: "📸 Photo", name: "photo", widget: "image" }
+              - { label: "🧑 Full name", name: "name", widget: "string" }
+              - { label: "🎖️ Role", name: "role", widget: "string", hint: "e.g. Chair, Vice Chair, Secretary, Treasurer, Board Member" }
+              - { label: "🏢 Company / organisation", name: "company", widget: "string" }
+              - { label: "📝 Short bio (optional)", name: "bio", widget: "text", required: false, hint: "A couple of sentences. Shown under their name on the website." }
 
   - name: "pricing"
-    label: "Membership Pricing"
+    label: "💳 Membership Pricing"
     label_singular: "Tier"
+    description: "The membership cards on the Become a Member page."
     files:
       - file: "content/pricing.json"
-        label: "Membership Tiers"
+        label: "💳 Membership Tiers"
         name: "pricing"
         fields:
           - label: "Tiers"
             name: "tiers"
             widget: "list"
-            summary: "{{name}} — {{priceDisplay}}"
+            summary: "🏷️ {{name}} — {{priceDisplay}}"
             fields:
-              - { label: "Internal ID (do not change - links the Join button to the right form)", name: "id", widget: "string", hint: "Only edit this if you know what you're doing" }
-              - { label: "Badge text (small label above the tier name)", name: "badgeLabel", widget: "string" }
-              - { label: "Badge colour style", name: "badgeStyle", widget: "select", options: ["student", "entry", "popular", "leader", "enterprise"], hint: "student=grey, entry=teal, popular=green, leader=sky blue, enterprise=blue" }
-              - { label: "Tier name", name: "name", widget: "string" }
-              - { label: "Price type", name: "priceMode", widget: "select", options: ["amount", "contact", "tbc"], hint: "amount = show a $ price, contact = show 'Contact us', tbc = show 'Price TBC'" }
-              - { label: "Price (only used if price type = amount)", name: "priceDisplay", widget: "string", required: false, hint: "Just the number, e.g. 99 or 1,650 - no dollar sign" }
-              - { label: "Billing period line", name: "period", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Features list", name: "features", widget: "list", field: { label: "Feature", name: "feature", widget: "string" } }
-              - { label: "Highlight this tier (adds the green glow / 'featured' treatment)", name: "featured", widget: "boolean", default: false }
-              - { label: "Button text", name: "ctaLabel", widget: "string" }
-              - { label: "Button action", name: "ctaType", widget: "select", options: ["join", "mailto", "disabled"], hint: "join = sends to the registration form, mailto = opens an email, disabled = greyed out button (use for 'Price TBC' tiers)" }
-              - { label: "Email address (only used if button action = mailto)", name: "ctaTarget", widget: "string", required: false, hint: "e.g. info@sctechia.com.au?subject=Enquiry" }
+              - { label: "🏷️ Tier name", name: "name", widget: "string" }
+              - { label: "💬 Badge text (small label above the tier name)", name: "badgeLabel", widget: "string", hint: "e.g. 'Most Popular', 'Individual', 'Student'" }
+              - { label: "🎨 Badge colour", name: "badgeStyle", widget: "select", options: [{ label: "⚪ Grey (Student / pending)", value: "student" }, { label: "🩵 Teal (Individual)", value: "entry" }, { label: "🟢 Green (Most Popular)", value: "popular" }, { label: "🔵 Sky Blue (Thought Leader)", value: "leader" }, { label: "🟦 Blue (Partner)", value: "enterprise" }] }
+              - { label: "💲 Price type", name: "priceMode", widget: "select", options: [{ label: "💲 Show a dollar price", value: "amount" }, { label: "✉️ Show 'Contact us'", value: "contact" }, { label: "⏳ Show 'Price TBC'", value: "tbc" }] }
+              - { label: "💲 Price (only if price type = dollar price)", name: "priceDisplay", widget: "string", required: false, hint: "Just the number, e.g. 99 or 1,650 - no dollar sign" }
+              - { label: "🗓️ Billing period line", name: "period", widget: "string", hint: "e.g. 'Annual membership • Billed once a year'" }
+              - { label: "📝 Description", name: "description", widget: "text" }
+              - { label: "✅ What's included (features list)", name: "features", widget: "list", field: { label: "✅ Feature", name: "feature", widget: "string" } }
+              - { label: "✨ Highlight this tier (adds the green glow)", name: "featured", widget: "boolean", default: false }
+              - { label: "🔘 Button text", name: "ctaLabel", widget: "string", hint: "e.g. 'Join for $99/yr' or 'Get in touch'" }
+              - { label: "🔘 Button action", name: "ctaType", widget: "select", options: [{ label: "➡️ Sends to the registration form", value: "join" }, { label: "✉️ Opens an email", value: "mailto" }, { label: "🚫 Greyed out / disabled (use for 'Price TBC')", value: "disabled" }] }
+              - { label: "✉️ Email address (only if button action = opens an email)", name: "ctaTarget", widget: "string", required: false, hint: "e.g. info@sctechia.com.au?subject=Enquiry" }
+              - { label: "⚙️ Internal ID - advanced, leave as is", name: "id", widget: "string", hint: "This links the button to the right sign-up form. Only change it if Bart says so." }
