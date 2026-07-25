@@ -10,7 +10,7 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://buy.stripe.com; frame-src 'self' https://buy.stripe.com https://*.stripe.com;"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://buy.stripe.com https://identity.netlify.com https://api.netlify.com; frame-src 'self' https://buy.stripe.com https://*.stripe.com https://identity.netlify.com;"
     Cache-Control = "public, max-age=0, must-revalidate"
 
 # Cache assets aggressively

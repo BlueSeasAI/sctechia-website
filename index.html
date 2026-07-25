@@ -4,6 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sunshine Coast Tech Alliance | The Gateway to the Digital Economy</title>
+<!-- Netlify Identity widget: invite/recovery/confirmation emails link to the
+     site root, not /admin/, so this needs to be here (not just in admin/) to
+     catch the #invite_token=/#recovery_token= in the URL and prompt for a
+     password. On success it sends the user on to the CMS. -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 <meta name="description" content="The Sunshine Coast peak industry body for the digital economy. Connecting technology leaders, businesses, educators and government to accelerate innovation, capability and growth across Queensland.">
 <meta property="og:title" content="Sunshine Coast Tech Alliance - The Gateway to the Digital Economy">
 <meta property="og:description" content="Join the community shaping the Sunshine Coast digital economy. Connect, learn, grow and influence the region's tech future.">
