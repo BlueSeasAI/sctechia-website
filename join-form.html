@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Your Membership | Sunshine Coast Tech Alliance</title>
+<meta name="description" content="Complete your Sunshine Coast Tech Alliance membership registration.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://sctechia.com.au/join-form">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --blue:        #4473ef;
+  --blue-deep:   #006cf3;
+  --sky:         #00acfe;
+  --teal:        #48afb5;
+  --green:       #4cea89;
+  --dark:        #0a0a0f;
+  --dark-card:   #12121c;
+  --dark-surf:   #1a1a26;
+  --border:      rgba(255,255,255,0.08);
+  --glass:       rgba(255,255,255,0.045);
+  --glass-b:     rgba(255,255,255,0.09);
+  --text:        #eff0f5;
+  --text-dim:    rgba(255,255,255,0.65);
+  --text-muted:  rgba(255,255,255,0.38);
+  --grad-blue:   linear-gradient(135deg,#4473ef 0%,#00acfe 100%);
+  --grad-teal:   linear-gradient(135deg,#48afb5 0%,#4cea89 100%);
+  --grad-green:  linear-gradient(135deg,#4cea89 0%,#00acfe 100%);
+  --mesh:        radial-gradient(ellipse at 20% 40%,rgba(68,115,239,.12) 0%,transparent 55%),
+                 radial-gradient(ellipse at 78% 15%,rgba(72,175,181,.08) 0%,transparent 45%),
+                 radial-gradient(ellipse at 55% 85%,rgba(76,234,137,.06) 0%,transparent 50%);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',-apple-system,sans-serif;color:var(--text);background:var(--dark);background-image:var(--mesh);background-attachment:fixed;line-height:1.7;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'DM Sans',sans-serif;font-weight:700;line-height:1.15;letter-spacing:-.02em}
+p{font-size:1rem;color:var(--text-dim);margin-bottom:14px;line-height:1.75}
+strong{color:var(--text)}
+.container{max-width:1120px;margin:0 auto;padding:0 40px}
+.label{font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:12px}
+.grad-text{color:var(--sky)}
+.teal-text{color:var(--teal)}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,10,15,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 40px;height:108px;display:flex;align-items:center;gap:40px}
+.nav-logo img{height:96px;width:auto}
+.nav-back{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--text-dim);transition:color .2s}
+.nav-back:hover{color:var(--text)}
+
+/* PAGE HERO */
+.page-hero{padding:150px 0 40px;text-align:center}
+.page-hero h1{font-size:clamp(2rem,4.5vw,3rem);font-weight:700;margin-bottom:12px}
+.page-hero p{font-size:1rem;max-width:520px;margin:0 auto}
+.tier-summary{display:inline-flex;align-items:center;gap:12px;background:var(--glass);border:1px solid var(--glass-b);border-radius:100px;padding:10px 20px;margin-top:20px;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:700}
+.tier-summary .price{color:var(--teal)}
+.tier-summary a{font-size:.78rem;font-weight:600;color:var(--text-muted);text-decoration:underline;text-underline-offset:3px}
+.tier-summary a:hover{color:var(--text)}
+
+/* FORM SECTION */
+.form-section{padding:40px 0 80px}
+.form-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:start}
+.form-sidebar h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:16px}
+.form-sidebar p{font-size:.92rem}
+.sidebar-steps{margin-top:32px;display:flex;flex-direction:column;gap:0}
+.step-item{display:flex;gap:16px;padding-bottom:28px;position:relative}
+.step-item:not(:last-child)::after{content:'';position:absolute;left:17px;top:36px;width:2px;height:calc(100% - 36px);background:var(--border)}
+.step-num{width:34px;height:34px;border-radius:50%;background:rgba(72,175,181,.15);border:1px solid rgba(72,175,181,.3);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:800;color:var(--teal);flex-shrink:0;z-index:1}
+.step-text h5{font-family:'DM Sans',sans-serif;font-size:.92rem;margin-bottom:4px}
+.step-text p{font-size:.8rem;margin:0;color:var(--text-muted)}
+
+/* FORM */
+.membership-form{background:var(--glass);backdrop-filter:blur(20px);border:1px solid var(--glass-b);border-radius:24px;padding:40px}
+.form-group{margin-bottom:20px}
+.form-label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
+.form-label .req{color:var(--teal)}
+.form-input{width:100%;background:var(--dark-surf);border:1px solid var(--border);border-radius:10px;padding:14px 16px;color:var(--text);font-family:'Inter',sans-serif;font-size:.95rem;outline:none;transition:border-color .2s,box-shadow .2s}
+.form-input:focus{border-color:#48afb5;box-shadow:0 0 0 3px rgba(72,175,181,.12)}
+.form-input.error{border-color:#ef4444 !important;box-shadow:0 0 0 3px rgba(239,68,68,.18) !important}
+.form-input::placeholder{color:var(--text-muted)}
+.form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,.35)' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tier-select-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.tier-option{position:relative;cursor:pointer}
+.tier-option input{position:absolute;opacity:0;pointer-events:none}
+.tier-option-label{display:block;padding:14px 16px;background:var(--dark-surf);border:1px solid var(--border);border-radius:10px;transition:border-color .2s,background .2s}
+.tier-option input:checked+.tier-option-label{border-color:#48afb5;background:rgba(72,175,181,.1)}
+.tier-option-label:hover{border-color:rgba(72,175,181,.4)}
+.tier-option-name{font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:700;display:block;margin-bottom:2px}
+.tier-option-price{font-size:.78rem;color:var(--text-muted)}
+.interests-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.interest-option{position:relative;cursor:pointer}
+.interest-option input{position:absolute;opacity:0;pointer-events:none}
+.interest-label{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--dark-surf);border:1px solid var(--border);border-radius:8px;font-size:.8rem;color:var(--text-dim);transition:border-color .2s,background .2s;user-select:none}
+.interest-option input:checked+.interest-label{border-color:#4473ef;background:rgba(68,115,239,.1);color:var(--text)}
+.interest-label:hover{border-color:rgba(68,115,239,.35)}
+.checkbox-tick{width:14px;height:14px;border:1.5px solid var(--border);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s}
+.interest-option input:checked+.interest-label .checkbox-tick{border-color:#4473ef;background:#4473ef}
+.form-footer{margin-top:28px}
+.form-privacy{font-size:.78rem;color:var(--text-muted);margin-bottom:20px;line-height:1.6}
+.form-privacy a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.btn-submit{width:100%;padding:18px;font-size:1rem;background:var(--grad-green);color:var(--dark);font-family:'DM Sans',sans-serif;font-weight:800;border:none;border-radius:12px;cursor:pointer;transition:transform .2s,box-shadow .3s;box-shadow:0 4px 24px rgba(76,234,137,.25)}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(76,234,137,.4)}
+
+/* SUCCESS STATE */
+.form-success{display:none;text-align:center;padding:48px 32px}
+.success-icon{width:72px;height:72px;border-radius:50%;background:rgba(76,234,137,.12);border:2px solid rgba(76,234,137,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.form-success h3{font-size:1.6rem;margin-bottom:12px}
+.form-success p{font-size:.95rem;color:var(--text-dim)}
+.form-success .payment-note{margin-top:24px;padding:18px 24px;background:rgba(68,115,239,.1);border:1px solid rgba(68,115,239,.2);border-radius:12px;font-size:.88rem;text-align:left;line-height:1.6}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:32px 0 28px}
+.footer-inner{display:flex;gap:64px;align-items:flex-start;flex-wrap:wrap}
+.footer-brand{flex:1;min-width:260px}
+.footer-brand img{height:72px;width:auto;margin-bottom:16px;opacity:.9}
+.footer-brand p{font-size:.88rem;color:var(--text-muted);margin:0;line-height:1.7}
+.footer-contact{flex-shrink:0}
+.footer-contact h5{font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px}
+.footer-contact a{display:flex;align-items:center;gap:8px;font-size:.88rem;color:var(--text-dim);margin-bottom:10px;transition:color .2s}
+.footer-contact a:hover{color:var(--text)}
+.footer-bottom{margin-top:40px;padding-top:22px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.78rem;color:var(--text-muted)}
+.footer-bottom a{color:var(--text-muted);transition:color .2s}
+.footer-bottom a:hover{color:var(--text)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .container{padding:0 20px}
+  .nav-inner{padding:0 20px;height:76px}
+  .nav-logo img{height:58px}
+  .form-layout{grid-template-columns:1fr}
+  .form-sidebar{text-align:center}
+  .form-row{grid-template-columns:1fr}
+  .tier-select-grid{grid-template-columns:1fr}
+  .interests-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;gap:32px}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Back to home">
+      <img src="images/logo.png" alt="Sunshine Coast Tech Alliance">
+    </a>
+    <a href="join.html" class="nav-back" aria-label="Back to membership options">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to membership options
+    </a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero" role="region" aria-labelledby="form-page-heading">
+  <div class="container">
+    <span class="label" style="display:block;text-align:center;margin-bottom:16px">Registration</span>
+    <h1 id="form-page-heading">Complete Your <span class="teal-text">Membership</span></h1>
+    <p>You're a few details away from joining the Sunshine Coast Tech Alliance.</p>
+    <div class="tier-summary">
+      <span>You're joining as:</span>
+      <span id="tierSummaryName">Tech Professional</span>
+      <span class="price" id="tierSummaryPrice">$99/yr</span>
+      <a href="join.html#tiers">Change tier</a>
+    </div>
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section" id="join-form" role="region" aria-labelledby="form-heading">
+  <div class="container">
+    <div class="form-layout">
+      <div class="form-sidebar">
+        <span class="label">Register now</span>
+        <h2 id="form-heading">Join in three steps</h2>
+        <p>Fill in the form, we'll confirm your details and send you directly to payment. Membership is active within one business day.</p>
+        <div class="sidebar-steps">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-text">
+              <h5>Fill in your details</h5>
+              <p>Name, organisation, contact info and your preferred membership tier</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-text">
+              <h5>Proceed to payment</h5>
+              <p>You'll be redirected to our secure Stripe payment page to complete your membership</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-text">
+              <h5>Get your welcome email</h5>
+              <p>Membership confirmation, event calendar invite and your member profile login</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEMBERSHIP FORM -->
+      <!-- Netlify form: add notification emails in Netlify dashboard (Forms > Settings > Email notifications) -->
+      <!-- Recipients: info@sctechia.com.au, hello@blueseas.ai -->
+      <div class="membership-form" id="formContainer">
+        <form name="membership" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="membershipForm" onsubmit="handleFormSubmit(event)" novalidate>
+          <input type="hidden" name="form-name" value="membership">
+          <input type="hidden" name="bot-field" style="display:none">
+          <input type="hidden" name="membership-tier" id="hiddenTier" value="individual">
+          <input type="hidden" name="membership-price" id="hiddenPrice" value="99">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="firstName">First name <span class="req">*</span></label>
+              <input class="form-input" type="text" id="firstName" name="first-name" required autocomplete="given-name" placeholder="First name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lastName">Last name <span class="req">*</span></label>
+              <input class="form-input" type="text" id="lastName" name="last-name" required autocomplete="family-name" placeholder="Last name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email address <span class="req">*</span></label>
+            <input class="form-input" type="email" id="email" name="email" required autocomplete="email" placeholder="your@email.com">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone number <span class="req">*</span></label>
+            <input class="form-input" type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="04xx xxx xxx">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="company">Organisation / Company <span class="req">*</span></label>
+            <input class="form-input" type="text" id="company" name="company" required autocomplete="organization" placeholder="Business or employer name">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="role">Your role</label>
+            <input class="form-input" type="text" id="role" name="role" autocomplete="organization-title" placeholder="e.g. Founder, CTO, Developer, Consultant">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="businessType">Business type</label>
+            <select class="form-input form-select" id="businessType" name="business-type">
+              <option value="" disabled selected>Select one...</option>
+              <option value="technology-company">Technology company</option>
+              <option value="digital-agency">Digital agency</option>
+              <option value="startup">Startup / Early-stage company</option>
+              <option value="enterprise">Enterprise or corporate</option>
+              <option value="government">Government or council</option>
+              <option value="university-tafe">University or TAFE</option>
+              <option value="nfp">Not-for-profit</option>
+              <option value="individual-consultant">Individual / Consultant</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Membership tier <span class="req">*</span></label>
+            <div class="tier-select-grid" role="radiogroup" aria-label="Select membership tier">
+              <label class="tier-option">
+                <input type="radio" name="tier-display" value="individual" id="tierInd" onchange="selectTier('individual','99')">
+                <span class="tier-option-label">
+                  <span class="tier-option-name">Tech Professional</span>
+                  <span class="tier-option-price">$99 / year</span>
+                </span>
+              </label>
+              <label class="tier-option">
+                <input type="radio" name="tier-display" value="business" id="tierBiz" onchange="selectTier('business','660')">
+                <span class="tier-option-label">
+                  <span class="tier-option-name">Business Member</span>
+                  <span class="tier-option-price">$660 / year</span>
+                </span>
+              </label>
+              <label class="tier-option">
+                <input type="radio" name="tier-display" value="thought-leader" id="tierTL" onchange="selectTier('thought-leader','1650')">
+                <span class="tier-option-label">
+                  <span class="tier-option-name">Thought Leader</span>
+                  <span class="tier-option-price">$1,650 / year</span>
+                </span>
+              </label>
+              <label class="tier-option">
+                <input type="radio" name="tier-display" value="partner" id="tierPartner" onchange="selectTier('partner','contact')">
+                <span class="tier-option-label">
+                  <span class="tier-option-name">Alliance Partner</span>
+                  <span class="tier-option-price">Contact us</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Areas of interest <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted)">(select all that apply)</span></label>
+            <div class="interests-grid" role="group" aria-label="Select areas of interest">
+              <label class="interest-option">
+                <input type="checkbox" name="interest-ai" value="AI & Automation">
+                <span class="interest-label">
+                  <span class="checkbox-tick"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" aria-hidden="true"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></span>
+                  AI &amp; Automation
+                </span>
+              </label>
+              <label class="interest-option">
+                <input type="checkbox" name="interest-cyber" value="Cyber Security">
+                <span class="interest-label">
+                  <span class="checkbox-tick"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" aria-hidden="true"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></span>
+                  Cyber Security
+                </span>
+              </label>
+              <label class="interest-option">
+                <input type="checkbox" name="interest-digital-transformation" value="Digital Transformation">
+                <span class="interest-label">
+                  <span class="checkbox-tick"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" aria-hidden="true"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></span>
+                  Digital Transformation
+                </span>
+              </label>
+              <label class="interest-option">
+                <input type="checkbox" name="interest-infrastructure" value="Digital Infrastructure">
+                <span class="interest-label">
+                  <span class="checkbox-tick"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" aria-hidden="true"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></span>
+                  Digital Infrastructure
+                </span>
+              </label>
+              <label class="interest-option">
+                <input type="checkbox" name="interest-talent" value="Talent & Workforce">
+                <span class="interest-label">
+                  <span class="checkbox-tick"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" aria-hidden="true"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></span>
+                  Talent &amp; Workforce
+                </span>
+              </label>
+              <label class="interest-option">
+                <input type="checkbox" name="interest-emerging" value="Emerging Technologies">
+                <span class="interest-label">
+                  <span class="checkbox-tick"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" aria-hidden="true"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></span>
+                  Emerging Tech
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="referral">How did you hear about us?</label>
+            <select class="form-input form-select" id="referral" name="referral">
+              <option value="" disabled selected>Select one...</option>
+              <option value="event">An event (FWD&gt;FEST, Barside Natter, etc.)</option>
+              <option value="member-referral">Referred by a member</option>
+              <option value="linkedin">LinkedIn</option>
+              <option value="google">Google search</option>
+              <option value="council">Sunshine Coast Council</option>
+              <option value="chamber">Chamber of Commerce</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-footer">
+            <p class="form-privacy">
+              Your information will be used to process your membership and send event communications. We do not share or sell member data. By submitting this form you agree to our <a href="#" onclick="return false">Privacy Policy</a> and <a href="#" onclick="return false">Terms of Use</a>.
+            </p>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              Continue to Payment &rarr;
+            </button>
+          </div>
+        </form>
+
+        <!-- SUCCESS STATE (shown after form submit) -->
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4cea89" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Details received. Redirecting to payment&hellip;</h3>
+          <p>Taking you to complete your membership payment now. If you're not redirected automatically, <a href="#" id="manualPaymentLink" style="color:var(--teal);text-decoration:underline">click here</a>.</p>
+          <div class="payment-note">
+            <strong>What happens next:</strong> once payment is complete, you'll receive a confirmation email from info@sctechia.com.au with your member profile details and upcoming event information.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" aria-label="Sunshine Coast Tech Alliance home">
+          <img src="images/logo.png" alt="Sunshine Coast Tech Alliance">
+        </a>
+        <p>The gateway to the Sunshine Coast digital economy.</p>
+      </div>
+      <div class="footer-contact">
+        <h5>Contact</h5>
+        <a href="mailto:info@sctechia.com.au">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@sctechia.com.au
+        </a>
+        <a href="join.html" style="margin-top:8px;font-weight:700;color:var(--teal)">
+          Back to membership options &rarr;
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Sunshine Coast Tech Alliance (SCTechIA). ABN available on request.</div>
+      <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <span style="color:var(--border)">|</span>
+        <a href="https://blueseas.ai" target="_blank" rel="noopener noreferrer" style="color:var(--text-muted)">Website by <span style="color:var(--teal)">Blue Seas AI</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// =====================================================================
+// STRIPE PAYMENT LINKS
+// =====================================================================
+// TODO: Create payment links in SCTechIA's Stripe dashboard and replace
+// these placeholder URLs with the real Stripe Payment Link URLs.
+// Instructions:
+//   1. Log into stripe.com > Payment Links > Create payment link
+//   2. Set product name (e.g. "SCTechIA Individual Membership")
+//   3. Set price ($99 AUD recurring annual / $660 AUD / $1650 AUD)
+//   4. Under "After payment" > Confirmation page, customise message
+//   5. Copy the link URL (format: https://buy.stripe.com/xxxxx)
+//   6. Replace the placeholder values below
+// =====================================================================
+const STRIPE_LINKS = {
+  'individual':     'https://buy.stripe.com/REPLACE_INDIVIDUAL_LINK',
+  'business':       'https://buy.stripe.com/REPLACE_BUSINESS_LINK',
+  'thought-leader': 'https://buy.stripe.com/REPLACE_THOUGHT_LEADER_LINK',
+  'partner':        'mailto:info@sctechia.com.au?subject=Alliance%20Partner%20Enquiry'
+};
+
+const TIER_META = {
+  'individual':     { name: 'Tech Professional', price: '$99/yr',    radio: 'tierInd' },
+  'business':       { name: 'Business Member',    price: '$660/yr',  radio: 'tierBiz' },
+  'thought-leader': { name: 'Thought Leader',     price: '$1,650/yr', radio: 'tierTL' },
+  'partner':        { name: 'Alliance Partner',   price: 'Contact us', radio: 'tierPartner' }
+};
+
+let selectedTier = 'individual';
+let selectedPrice = '99';
+
+function selectTier(tier, price) {
+  if (!TIER_META[tier]) tier = 'individual';
+  selectedTier = tier;
+  selectedPrice = price;
+  document.getElementById('hiddenTier').value = tier;
+  document.getElementById('hiddenPrice').value = price;
+  const radio = document.getElementById(TIER_META[tier].radio);
+  if (radio) radio.checked = true;
+  document.getElementById('tierSummaryName').textContent = TIER_META[tier].name;
+  document.getElementById('tierSummaryPrice').textContent = TIER_META[tier].price;
+  const submitBtn = document.getElementById('submitBtn');
+  if (tier === 'partner') {
+    submitBtn.textContent = 'Send Partnership Enquiry';
+  } else {
+    submitBtn.innerHTML = 'Continue to Payment &rarr;';
+  }
+}
+
+// Preselect tier from the ?tier= query param passed by join.html, so the
+// selection made on the pricing page carries through without the visitor
+// having to reselect it here.
+function preselectFromQueryParam() {
+  const params = new URLSearchParams(window.location.search);
+  const tier = params.get('tier');
+  const priceMap = { individual: '99', business: '660', 'thought-leader': '1650', partner: 'contact' };
+  if (tier && TIER_META[tier]) {
+    selectTier(tier, priceMap[tier]);
+  } else {
+    selectTier('individual', '99');
+  }
+}
+preselectFromQueryParam();
+
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+
+  // Basic validation
+  const required = form.querySelectorAll('[required]');
+  let valid = true;
+  required.forEach(el => {
+    el.classList.remove('error');
+    if (!el.value.trim()) {
+      el.classList.add('error');
+      if (valid) el.focus();
+      valid = false;
+    }
+  });
+  if (!valid) return;
+
+  const paymentUrl = STRIPE_LINKS[selectedTier];
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.textContent = 'Processing...';
+  submitBtn.disabled = true;
+
+  // Submit form to Netlify, then redirect to Stripe
+  const data = new FormData(form);
+
+  // Append checkbox values
+  form.querySelectorAll('input[type=checkbox]:checked').forEach(cb => {
+    data.append(cb.name, cb.value);
+  });
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(() => {
+    showSuccessAndRedirect(paymentUrl);
+  })
+  .catch(() => {
+    // On network error, still show success and redirect
+    showSuccessAndRedirect(paymentUrl);
+  });
+}
+
+function showSuccessAndRedirect(paymentUrl) {
+  document.getElementById('formContainer').querySelector('form').style.display = 'none';
+  const successDiv = document.getElementById('formSuccess');
+  successDiv.style.display = 'block';
+  document.getElementById('manualPaymentLink').href = paymentUrl;
+
+  // Redirect after 1.5s
+  setTimeout(() => {
+    window.location.href = paymentUrl;
+  }, 1500);
+}
+
+// Form input focus styles
+document.querySelectorAll('.form-input').forEach(input => {
+  input.addEventListener('input', () => {
+    if (input.value.trim()) input.classList.remove('error');
+  });
+});
+</script>
+</body>
+</html>

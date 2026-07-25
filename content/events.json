@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "title": "Barside Natter Q3 2026",
+      "dateLabel": "Coming soon",
+      "tag": "Networking",
+      "description": "Our next informal member networking evening. Date and venue to be confirmed shortly. Register your interest to be first to know.",
+      "location": "Sunshine Coast venue TBC",
+      "moreInfoUrl": ""
+    },
+    {
+      "title": "Annual Tech Summit 2026",
+      "dateLabel": "16 Sep 2026 • All day",
+      "tag": "Flagship",
+      "description": "The region's premier technology conference. Thought leadership in the morning, practical sessions in the afternoon, speakers from across Australia.",
+      "location": "Sunshine Coast, venue TBC",
+      "moreInfoUrl": ""
+    },
+    {
+      "title": "Barside Natter",
+      "dateLabel": "Quarterly • Evening",
+      "tag": "Networking",
+      "description": "Informal member-driven networking. No agenda, no slides. Just good conversations with people who are building things on the Sunshine Coast.",
+      "location": "Rotating Sunshine Coast venues",
+      "moreInfoUrl": ""
+    }
+  ]
+}

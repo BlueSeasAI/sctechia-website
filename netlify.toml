@@ -1,0 +1,55 @@
+[build]
+  publish = "."
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://buy.stripe.com; frame-src 'self' https://buy.stripe.com https://*.stripe.com;"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Cache assets aggressively
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Admin (Decap CMS) needs a looser CSP to load its bundle + Netlify Identity -
+# scoped to /admin/* only, rest of the site keeps the strict policy above.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+    Content-Security-Policy = "default-src 'self' https://unpkg.com https://identity.netlify.com https://api.netlify.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.netlify.com https://identity.netlify.com https://*.netlify.app https://api.github.com; frame-src 'self' https://identity.netlify.com;"
+
+# Redirects
+[[redirects]]
+  from = "/join/"
+  to = "/join.html"
+  status = 200
+
+[[redirects]]
+  from = "/membership"
+  to = "/join.html"
+  status = 301
+
+[[redirects]]
+  from = "/become-a-member"
+  to = "/join.html"
+  status = 301
+
+# Netlify Forms: configure notification emails in dashboard
+# Dashboard > Forms > [form name] > Settings > Email notifications
+# Add recipients: info@sctechia.com.au, hello@blueseas.ai
+# Forms used: "membership" (join-form.html), "contact" (index.html), "speakers-panel" (index.html)
+#
+# Page structure (updated 25 Jul 2026 revision):
+#   index.html      - homepage
+#   join.html       - membership tiers / pricing overview (was previously tiers + form combined)
+#   join-form.html  - NEW: separate registration form page, reads ?tier= from the
+#                     "Join for $X" links on join.html to preselect the tier

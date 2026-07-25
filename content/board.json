@@ -1,0 +1,14 @@
+{
+  "members": [
+    { "name": "Jason Garland", "role": "Chair", "company": "Secure Access", "photo": "/images/board/jason-garland.jpg" },
+    { "name": "Rob Neely", "role": "Vice Chair", "company": "Securely Group", "photo": "/images/board/rob-neely.png" },
+    { "name": "Tracey Coobula", "role": "Secretary", "company": "RDA Moreton Bay & Sunshine Coast", "photo": "/images/board/tracey-coobula.jpg" },
+    { "name": "Damien Hicks", "role": "Treasurer", "company": "Entag", "photo": "/images/board/damien-hicks.png" },
+    { "name": "Justin Annesley", "role": "Board Member", "company": "Collider / UniSC Innovation", "photo": "/images/board/justin-annesley.jpg" },
+    { "name": "Ben Creamer", "role": "Board Member", "company": "Microsoft", "photo": "/images/board/ben-creamer.jpg" },
+    { "name": "Jared Cunningham", "role": "Board Member", "company": "Ravinn", "photo": "/images/board/jared-cunningham.jpg" },
+    { "name": "Dr. Simon Kaplan", "role": "Board Member", "company": "The Urban Institute", "photo": "/images/board/simon-kaplan.jpg" },
+    { "name": "Bianca Manski", "role": "Board Member", "company": "NAB", "photo": "/images/board/bianca-manski.jpg" },
+    { "name": "Bart Puszko", "role": "Board Member", "company": "Blue Seas AI", "photo": "/images/board/bart-puszko.jpg" }
+  ]
+}

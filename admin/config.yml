@@ -1,0 +1,50 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Only two things are editable here: the events list and the board members
+# list. Nothing else on the site (pricing, pillars, hero copy, footer, nav)
+# has a field here, so it cannot be touched through this admin panel.
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "events"
+    label: "Events"
+    label_singular: "Event"
+    files:
+      - file: "content/events.json"
+        label: "Upcoming Events"
+        name: "events"
+        fields:
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            summary: "{{title}} — {{dateLabel}}"
+            fields:
+              - { label: "Event name", name: "title", widget: "string" }
+              - { label: "Date (as shown on the card)", name: "dateLabel", widget: "string", hint: "e.g. '16 Sep 2026 • All day' or 'Coming soon' or 'Quarterly • Evening'" }
+              - { label: "Tag", name: "tag", widget: "select", options: ["Networking", "Flagship"] }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Location", name: "location", widget: "string", hint: "e.g. 'Sunshine Coast venue TBC'" }
+              - { label: "More information link (Safe Tickets URL)", name: "moreInfoUrl", widget: "string", required: false, hint: "Leave blank if there's no ticket page yet" }
+
+  - name: "board"
+    label: "Board Members"
+    label_singular: "Board Member"
+    files:
+      - file: "content/board.json"
+        label: "Board Members"
+        name: "board"
+        fields:
+          - label: "Members"
+            name: "members"
+            widget: "list"
+            summary: "{{name}} — {{role}}"
+            fields:
+              - { label: "Full name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string", hint: "e.g. Chair, Vice Chair, Secretary, Treasurer, Board Member" }
+              - { label: "Company / organisation", name: "company", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image" }
+              - { label: "Short bio (optional)", name: "bio", widget: "text", required: false, hint: "A couple of sentences. Shown under their name on the website." }
