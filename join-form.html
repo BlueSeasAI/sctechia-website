@@ -148,7 +148,7 @@ strong{color:var(--text)}
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="Back to home">
-      <img src="images/logo.png" alt="Sunshine Coast Tech Alliance">
+      <img src="images/logos/sctechia-logo.svg" alt="Sunshine Coast Tech Alliance">
     </a>
     <a href="join.html" class="nav-back" aria-label="Back to membership options">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
@@ -266,6 +266,13 @@ strong{color:var(--text)}
             <label class="form-label">Membership tier <span class="req">*</span></label>
             <div class="tier-select-grid" role="radiogroup" aria-label="Select membership tier">
               <label class="tier-option">
+                <input type="radio" name="tier-display" value="student" id="tierStudent" onchange="selectTier('student','55')">
+                <span class="tier-option-label">
+                  <span class="tier-option-name">Student</span>
+                  <span class="tier-option-price">$55 / year</span>
+                </span>
+              </label>
+              <label class="tier-option">
                 <input type="radio" name="tier-display" value="individual" id="tierInd" onchange="selectTier('individual','99')">
                 <span class="tier-option-label">
                   <span class="tier-option-name">Tech Professional</span>
@@ -360,7 +367,7 @@ strong{color:var(--text)}
 
           <div class="form-footer">
             <p class="form-privacy">
-              Your information will be used to process your membership and send event communications. We do not share or sell member data. By submitting this form you agree to our <a href="#" onclick="return false">Privacy Policy</a> and <a href="#" onclick="return false">Terms of Use</a>.
+              Your information will be used to process your membership and send event communications. We do not share or sell member data. By submitting this form you agree to our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener">Terms of Use</a>.
             </p>
             <button type="submit" class="btn-submit" id="submitBtn">
               Continue to Payment &rarr;
@@ -390,7 +397,7 @@ strong{color:var(--text)}
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="/" aria-label="Sunshine Coast Tech Alliance home">
-          <img src="images/logo.png" alt="Sunshine Coast Tech Alliance">
+          <img src="images/logos/sctechia-logo.svg" alt="Sunshine Coast Tech Alliance">
         </a>
         <p>The gateway to the Sunshine Coast digital economy.</p>
       </div>
@@ -408,8 +415,8 @@ strong{color:var(--text)}
     <div class="footer-bottom">
       <div>&copy; 2026 Sunshine Coast Tech Alliance (SCTechIA). ABN available on request.</div>
       <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
         <span style="color:var(--border)">|</span>
         <a href="https://blueseas.ai" target="_blank" rel="noopener noreferrer" style="color:var(--text-muted)">Website by <span style="color:var(--teal)">Blue Seas AI</span></a>
       </div>
@@ -421,24 +428,19 @@ strong{color:var(--text)}
 // =====================================================================
 // STRIPE PAYMENT LINKS
 // =====================================================================
-// TODO: Create payment links in SCTechIA's Stripe dashboard and replace
-// these placeholder URLs with the real Stripe Payment Link URLs.
-// Instructions:
-//   1. Log into stripe.com > Payment Links > Create payment link
-//   2. Set product name (e.g. "SCTechIA Individual Membership")
-//   3. Set price ($99 AUD recurring annual / $660 AUD / $1650 AUD)
-//   4. Under "After payment" > Confirmation page, customise message
-//   5. Copy the link URL (format: https://buy.stripe.com/xxxxx)
-//   6. Replace the placeholder values below
+// Live payment links on the SCTechIA Stripe account, supplied by White
+// House International (Min Swan, 28 July 2026).
 // =====================================================================
 const STRIPE_LINKS = {
-  'individual':     'https://buy.stripe.com/REPLACE_INDIVIDUAL_LINK',
-  'business':       'https://buy.stripe.com/REPLACE_BUSINESS_LINK',
-  'thought-leader': 'https://buy.stripe.com/REPLACE_THOUGHT_LEADER_LINK',
+  'student':        'https://buy.stripe.com/00w3cugCX8vwdLf4ee2wU03',
+  'individual':     'https://buy.stripe.com/bJe9AS0DZfXY36B8uu2wU04',
+  'business':       'https://buy.stripe.com/eVq3cucmH6nofTn7qq2wU05',
+  'thought-leader': 'https://buy.stripe.com/7sYeVc0DZaDE7mR4ee2wU06',
   'partner':        'mailto:info@sctechia.com.au?subject=Alliance%20Partner%20Enquiry'
 };
 
 const TIER_META = {
+  'student':        { name: 'Student',            price: '$55/yr',     radio: 'tierStudent' },
   'individual':     { name: 'Tech Professional', price: '$99/yr',    radio: 'tierInd' },
   'business':       { name: 'Business Member',    price: '$660/yr',  radio: 'tierBiz' },
   'thought-leader': { name: 'Thought Leader',     price: '$1,650/yr', radio: 'tierTL' },
@@ -472,7 +474,7 @@ function selectTier(tier, price) {
 function preselectFromQueryParam() {
   const params = new URLSearchParams(window.location.search);
   const tier = params.get('tier');
-  const priceMap = { individual: '99', business: '660', 'thought-leader': '1650', partner: 'contact' };
+  const priceMap = { student: '55', individual: '99', business: '660', 'thought-leader': '1650', partner: 'contact' };
   if (tier && TIER_META[tier]) {
     selectTier(tier, priceMap[tier]);
   } else {

@@ -2,9 +2,10 @@ backend:
   name: git-gateway
   branch: main
 
-# Three things are editable here: events, board members and membership
-# pricing. Nothing else on the site (focus areas, hero copy, footer, nav)
-# has a field here, so it cannot be touched through this admin panel.
+# Five things are editable here: events, board members, membership pricing,
+# member logos and the common questions. Nothing else on the site (focus
+# areas, hero copy, footer, nav) has a field here, so it cannot be touched
+# through this admin panel.
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -22,7 +23,7 @@ collections:
           - label: "Events"
             name: "events"
             widget: "list"
-            summary: "🎫 {{title}} — {{dateLabel}}"
+            summary: "🎫 {{title}} · {{dateLabel}}"
             fields:
               - { label: "🎫 Event name", name: "title", widget: "string" }
               - { label: "📅 Date (as shown on the card)", name: "dateLabel", widget: "string", hint: "Type it exactly as you want it to read, e.g. '16 Sep 2026 • All day', 'Coming soon' or 'Quarterly • Evening'" }
@@ -43,7 +44,7 @@ collections:
           - label: "Members"
             name: "members"
             widget: "list"
-            summary: "🧑 {{name}} — {{role}}"
+            summary: "🧑 {{name}} · {{role}}"
             fields:
               - { label: "📸 Photo", name: "photo", widget: "image" }
               - { label: "🧑 Full name", name: "name", widget: "string" }
@@ -63,7 +64,7 @@ collections:
           - label: "Tiers"
             name: "tiers"
             widget: "list"
-            summary: "🏷️ {{name}} — {{priceDisplay}}"
+            summary: "🏷️ {{name}} · {{priceDisplay}}"
             fields:
               - { label: "🏷️ Tier name", name: "name", widget: "string" }
               - { label: "💬 Badge text (small label above the tier name)", name: "badgeLabel", widget: "string", hint: "e.g. 'Most Popular', 'Individual', 'Student'" }
@@ -78,3 +79,39 @@ collections:
               - { label: "🔘 Button action", name: "ctaType", widget: "select", options: [{ label: "➡️ Sends to the registration form", value: "join" }, { label: "✉️ Opens an email", value: "mailto" }, { label: "🚫 Greyed out / disabled (use for 'Price TBC')", value: "disabled" }] }
               - { label: "✉️ Email address (only if button action = opens an email)", name: "ctaTarget", widget: "string", required: false, hint: "e.g. info@sctechia.com.au?subject=Enquiry" }
               - { label: "⚙️ Internal ID - advanced, leave as is", name: "id", widget: "string", hint: "This links the button to the right sign-up form. Only change it if Bart says so." }
+
+  - name: "members"
+    label: "🏢 Member Logos"
+    label_singular: "Member logo"
+    description: "The scrolling logo band on the homepage. Add a logo when a member joins, remove it when they leave."
+    files:
+      - file: "content/members.json"
+        label: "🏢 Member & Partner Logos"
+        name: "members"
+        fields:
+          - label: "Members"
+            name: "members"
+            widget: "list"
+            summary: "🏢 {{name}}"
+            fields:
+              - { label: "🏢 Organisation name", name: "name", widget: "string", hint: "Shown to screen readers and used if the image fails to load" }
+              - { label: "🖼️ Logo image", name: "logo", widget: "image", hint: "PNG or SVG with a transparent background works best. The logo sits on a white tile." }
+              - { label: "📏 Display size", name: "size", widget: "select", default: "standard", options: [{ label: "Standard", value: "standard" }, { label: "Large (for logos with lots of space around the mark)", value: "large" }] }
+              - { label: "🌑 Darken the logo", name: "darken", widget: "boolean", default: false, hint: "Turn this on for pale or white logos that would otherwise disappear against the white tile" }
+
+  - name: "faq"
+    label: "❓ Common Questions"
+    label_singular: "Question"
+    description: "The Common questions section at the bottom of the Become a Member page."
+    files:
+      - file: "content/faq.json"
+        label: "❓ Common Questions"
+        name: "faq"
+        fields:
+          - label: "Questions"
+            name: "faqs"
+            widget: "list"
+            summary: "❓ {{question}}"
+            fields:
+              - { label: "❓ Question", name: "question", widget: "string" }
+              - { label: "💬 Answer", name: "answer", widget: "text", hint: "Plain text. Keep it to a paragraph so the answer opens cleanly." }

@@ -1,0 +1,16 @@
+{
+  "members": [
+    { "name": "Secure Access", "logo": "/images/logos/secure-access-logo.png", "size": "standard", "darken": false },
+    { "name": "Entag", "logo": "/images/logos/entag-logo.png", "size": "standard", "darken": true },
+    { "name": "UniSC", "logo": "/images/logos/unisc-logo.svg", "size": "standard", "darken": false },
+    { "name": "TAFE Queensland", "logo": "/images/logos/tafe-qld-logo.svg", "size": "standard", "darken": false },
+    { "name": "Blue Seas AI", "logo": "/images/logos/blue-seas-ai-logo-dark.svg", "size": "standard", "darken": false },
+    { "name": "Ravinn", "logo": "/images/logos/ravinn-logo.svg", "size": "standard", "darken": false },
+    { "name": "NAB", "logo": "/images/logos/nab-logo-light-bg.svg", "size": "standard", "darken": false },
+    { "name": "Microsoft", "logo": "/images/logos/microsoft-logo.png", "size": "standard", "darken": false },
+    { "name": "Sunshine Coast Council", "logo": "/images/logos/sc-council-logo.png", "size": "large", "darken": false },
+    { "name": "Securely Group", "logo": "/images/logos/securely-group-logo.png", "size": "standard", "darken": true },
+    { "name": "The Urban Institute", "logo": "/images/logos/urban-institute-logo.svg", "size": "standard", "darken": false },
+    { "name": "Walker Corp", "logo": "/images/logos/walker-corp-logo.png", "size": "standard", "darken": false }
+  ]
+}

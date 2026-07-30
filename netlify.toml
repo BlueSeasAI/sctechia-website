@@ -53,3 +53,13 @@
 #   join.html       - membership tiers / pricing overview (was previously tiers + form combined)
 #   join-form.html  - NEW: separate registration form page, reads ?tier= from the
 #                     "Join for $X" links on join.html to preselect the tier
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 200

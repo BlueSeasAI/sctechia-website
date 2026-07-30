@@ -5,19 +5,17 @@
       "badgeLabel": "Student",
       "badgeStyle": "student",
       "name": "Student",
-      "priceMode": "tbc",
-      "priceDisplay": "",
-      "period": "Pending board confirmation",
-      "description": "For current students studying technology, digital or a related field on the Sunshine Coast. Full access to events, community and the member directory while you study.",
+      "priceMode": "amount",
+      "priceDisplay": "55",
+      "period": "Annual membership • Billed once a year",
+      "description": "For current students studying technology, digital or a related field on the Sunshine Coast. Full access to events and the Alliance community while you study.",
       "features": [
         "Access to all member events",
-        "Member directory listing",
-        "Monthly industry briefings",
         "Barside Natter networking events"
       ],
       "featured": false,
-      "ctaLabel": "Pricing coming soon",
-      "ctaType": "disabled",
+      "ctaLabel": "Join for $55/yr",
+      "ctaType": "join",
       "ctaTarget": ""
     },
     {
@@ -28,13 +26,12 @@
       "priceMode": "amount",
       "priceDisplay": "99",
       "period": "Annual membership • Billed once a year",
-      "description": "For individual tech professionals, founders and freelancers. Full access to events, community and the member directory.",
+      "description": "For individual tech professionals, founders and freelancers. Full access to events and the Alliance community.",
       "features": [
         "Access to all member events",
-        "Member directory listing",
-        "Monthly industry briefings",
         "Barside Natter networking events",
-        "Discounted Tech Summit tickets"
+        "Discounted Tech Summit tickets",
+        "Voting rights at Annual General Meetings"
       ],
       "featured": false,
       "ctaLabel": "Join for $99/yr",
@@ -48,15 +45,16 @@
       "name": "Business Member",
       "priceMode": "amount",
       "priceDisplay": "660",
-      "period": "Annual membership • Includes 2 named contacts",
-      "description": "For technology businesses and digital-first companies. Two member contacts, enhanced directory profile and speaking opportunities at events.",
+      "period": "Annual membership • Includes Two named contacts",
+      "description": "For technology businesses and digital-first companies. Two member contacts, your logo on the website and speaking opportunities at events.",
       "features": [
         "Everything in Tech Professional",
-        "2 named contacts included",
-        "Enhanced company directory profile",
+        "Two named contacts included",
+        "Logo on website",
         "Priority event access & early-bird pricing",
         "Speaking & thought leadership opportunities",
-        "Advocacy and government engagement"
+        "Advocacy and government engagement",
+        "Voting rights at Annual General Meetings"
       ],
       "featured": true,
       "ctaLabel": "Join for $660/yr",
@@ -70,15 +68,17 @@
       "name": "Thought Leader",
       "priceMode": "amount",
       "priceDisplay": "1,650",
-      "period": "Annual membership • Includes 3 named contacts",
+      "period": "Annual membership • Includes Three named contacts",
       "description": "For established leaders and companies wanting to shape conversations, build profile and access strategic opportunities in the Sunshine Coast digital economy.",
       "features": [
         "Everything in Business Member",
-        "3 named contacts included",
+        "Three named contacts included",
+        "Logo on website",
         "Featured speaking position at flagship events",
         "Thought leadership features in newsletters & reports",
         "Industry working group & advisory access",
-        "Priority board engagement & briefings"
+        "Priority board engagement & briefings",
+        "Voting rights at Annual General Meetings"
       ],
       "featured": false,
       "ctaLabel": "Join for $1,650/yr",

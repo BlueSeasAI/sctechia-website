@@ -1,0 +1,52 @@
+{
+  "faqs": [
+    {
+      "question": "What events am I invited to as a member?",
+      "answer": "Members receive invitations to all Alliance events including our quarterly Barside Natter networking series, Thought Leaders Forums, the annual Tech Summit and any government briefings or roundtables we organise. Business Members and above get priority access and early-bird rates."
+    },
+    {
+      "question": "Can I join as an individual even if I work for a large company?",
+      "answer": "Yes. Individual Tech Professional membership is for any person in the technology industry, regardless of where they work. If your employer wants corporate representation, they can apply separately for a Business Member or Alliance Partner arrangement."
+    },
+    {
+      "question": "How does the payment work?",
+      "answer": "After you submit your details on the registration form, you will be redirected to our secure Stripe payment page. Membership fees are charged annually. You can pay by card. Your membership renews on the anniversary of your join date unless you cancel before the renewal date."
+    },
+    {
+      "question": "Do I need to be based on the Sunshine Coast?",
+      "answer": "Not necessarily. We welcome members who work in the Sunshine Coast region, run businesses with Sunshine Coast operations, or have a strong interest in the region's digital economy. If you're unsure, reach out to info@sctechia.com.au and we'll help work out the right fit."
+    },
+    {
+      "question": "What's the difference between a Business Member and an Alliance Partner?",
+      "answer": "Business Membership is our standard company-level membership. Alliance Partner arrangements are for organisations wanting deeper engagement including event naming rights, co-branding opportunities and strategic partnership. Alliance Partner terms are negotiated individually - contact us directly to discuss."
+    },
+    {
+      "question": "What is the Sunshine Coast Tech Alliance and what does it do?",
+      "answer": "The Sunshine Coast Tech Alliance (SCTechIA) is the peak industry body for the Sunshine Coast digital economy. We connect technology businesses, digital leaders, innovators, educators, government and investors to drive growth, capability and opportunity across the region. We run events, facilitate industry working groups, advocate to government and provide a platform for the region's tech community to connect and grow."
+    },
+    {
+      "question": "How is the Sunshine Coast Tech Alliance different from a Chamber of Commerce?",
+      "answer": "A Chamber of Commerce represents all businesses across all industries. The Sunshine Coast Tech Alliance is a specialist peak body focused exclusively on the digital economy. We go deeper on technology, digital transformation, cybersecurity, AI, emerging tech, workforce development and regional digital infrastructure. We also work collaboratively with the Chamber and other industry bodies as part of the broader Sunshine Coast business ecosystem."
+    },
+    {
+      "question": "What is the Sunshine Coast digital economy?",
+      "answer": "The Sunshine Coast digital economy encompasses all businesses, professionals and organisations involved in creating, delivering or using digital technology across the region. This includes technology companies, software developers, cybersecurity firms, digital agencies, AI and automation specialists, digital media and creative technology businesses, and every organisation in the region undergoing digital transformation. The Sunshine Coast hosts significant digital infrastructure including international subsea cable landing points, positioning it as a key node in Australia's digital connectivity."
+    },
+    {
+      "question": "Can students or recent graduates join the Tech Alliance?",
+      "answer": "Yes. There is a dedicated Student membership tier at $55 a year for anyone currently studying a technology, digital or related field. Recent graduates and anyone building a career in technology are also welcome under Individual Tech Professional membership. Workforce and talent development is one of our focus areas, and we actively welcome the next generation of digital professionals into the community. Members can access events, mentoring opportunities and connect directly with employers in the region."
+    },
+    {
+      "question": "How does the Tech Alliance support Brisbane 2032?",
+      "answer": "The Brisbane 2032 Olympic and Paralympic Games are projected to deliver a $39.5 billion economic impact across South East Queensland. The Sunshine Coast is a key host venue region. The Tech Alliance is working to ensure local technology businesses are positioned to capture infrastructure contracts, digital services opportunities and the talent development pipeline that comes with a decade of Olympic preparation. Cybersecurity, connectivity, smart venue technology and digital media are all areas where the Sunshine Coast tech community has a role to play."
+    },
+    {
+      "question": "Is membership tax deductible?",
+      "answer": "Membership fees paid by a business are generally deductible as a business expense under Australian tax law. Individual memberships may be deductible where they are directly connected to earning assessable income. We recommend speaking with your accountant to confirm your specific circumstances. A receipt will be issued upon payment."
+    },
+    {
+      "question": "Can I cancel my membership?",
+      "answer": "Membership is billed annually. You can cancel before your renewal date to prevent the next year's charge. We do not offer refunds for the current membership period. To cancel, contact info@sctechia.com.au and we will process this for you promptly."
+    }
+  ]
+}
