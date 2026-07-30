@@ -50,7 +50,7 @@ collections:
               - { label: "🧑 Full name", name: "name", widget: "string" }
               - { label: "🎖️ Role", name: "role", widget: "string", hint: "e.g. Chair, Vice Chair, Secretary, Treasurer, Board Member" }
               - { label: "🏢 Company / organisation", name: "company", widget: "string" }
-              - { label: "📝 Short bio (optional)", name: "bio", widget: "text", required: false, hint: "A couple of sentences. Shown under their name on the website." }
+              - { label: "📝 Short bio (optional)", name: "bio", widget: "text", required: false, pattern: ["^[\\s\\S]{0,130}$", "Too long. Keep the bio to 130 characters or fewer so it fits the card without being cut off."], hint: "One sentence, 130 characters maximum. Anything longer will not save. Shown under their name on the website." }
 
   - name: "pricing"
     label: "💳 Membership Pricing"

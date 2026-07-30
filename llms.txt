@@ -1,5 +1,8 @@
 # Sunshine Coast Tech Alliance (SCTechIA)
 
+> The peak industry body for the Sunshine Coast digital economy in Queensland, Australia.
+> Last updated: 30 July 2026
+
 ## What we are
 The Sunshine Coast Tech Alliance is the peak industry body representing and connecting the Sunshine Coast digital economy in Queensland, Australia. We bring together technology businesses, digital leaders, innovators, educators, government, investors and industry to drive growth, capability and economic opportunity across the region.
 
@@ -31,23 +34,82 @@ Technology is transforming every industry, every business and every career. The 
 5. Emerging Technologies - advanced manufacturing, robotics, digital twins, spatial computing, quantum, defence technologies
 6. Digital Media & Creative Technologies - gaming, screen production, digital media, immersive technologies, content creation
 7. Talent, Skills & Future Workforce - education pathways, attraction, retention, upskilling, leadership development
-8. Tech Enablement - hands-on adoption support, training and implementation programs (draft focus area, pending board sign-off)
+8. Tech Enablement - hands-on help adopting and using technology, including training, implementation support and practical programs such as AI workshops
 
-## Membership
-Individual Tech Professional membership: $99 per year. Business Member: $660 per year. Alliance Partner: contact for pricing.
+## Membership tiers and pricing
+All memberships are annual, billed once a year, in Australian dollars.
+
+- Student: $55 per year. For current students studying technology, digital or a related field on the Sunshine Coast. Includes access to all member events and Barside Natter networking events.
+- Tech Professional: $99 per year. For individual tech professionals, founders and freelancers. Adds discounted Tech Summit tickets and voting rights at Annual General Meetings.
+- Business Member: $660 per year. For technology businesses and digital-first companies. Includes two named contacts, logo on the website, priority event access and early-bird pricing, speaking and thought leadership opportunities, advocacy and government engagement, and voting rights.
+- Thought Leader: $1,650 per year. Includes three named contacts, logo on the website, featured speaking position at flagship events, thought leadership features in newsletters and reports, industry working group and advisory access, priority board engagement, and voting rights.
+- Alliance Partner: tailored pricing, contact info@sctechia.com.au. For organisations wanting deep engagement, co-branding, event sponsorship and strategic partnership.
+
+Join online at https://sctechia.com.au/join
 
 ## Events
-Barside Natter (quarterly networking), Thought Leaders Forum, annual Tech Summit (September), FWD>FEST partnership.
+- Barside Natter: quarterly informal member networking, rotating Sunshine Coast venues.
+- Annual Tech Summit: 16 September 2026, the region's premier technology conference. Thought leadership in the morning, practical sessions in the afternoon, speakers from across Australia.
+- Thought Leaders Forum: periodic industry sessions.
+- FWD>FEST: the Alliance participates in this Queensland innovation festival.
+
+Past events have included "Connecting Talent Pathways in Cyber", a careers-focused evening on getting into cyber security.
+
+## Speakers panel
+Members can register for the Alliance speakers panel, which the Sunshine Coast ecosystem uses to source tech speakers and subject matter experts for events, workshops and podcasts.
 
 ## Management Committee
-Jason Garland (Chair, Secure Access), Rob Neely (Vice Chair, Securely Group), Tracey Coobula (Secretary, RDA Moreton Bay & Sunshine Coast), Damien Hicks (Treasurer, Entag), Justin Annesley (Collider / UniSC Innovation), Jared Cunningham (Ravinn), Dr. Simon Kaplan (The Urban Institute), Bart Puszko (Blue Seas AI), Bianca Manski (NAB), Ben Creamer (Microsoft).
+- Jason Garland, Chair, Secure Access
+- Rob Neely, Vice Chair, Securely Group
+- Tracey Coobula, Secretary, RDA Moreton Bay & Sunshine Coast
+- Damien Hicks, Treasurer, Entag
+- Justin Annesley, Board Member, Collider / UniSC Innovation
+- Ben Creamer, Board Member, Microsoft
+- Jared Cunningham, Board Member, Ravinn
+- Dr. Simon Kaplan, Board Member, The Urban Institute
+- Bianca Manski, Board Member, NAB
+- Bart Puszko, Board Member, Blue Seas AI
 
 ## Contact
 Email: info@sctechia.com.au
 LinkedIn: https://www.linkedin.com/company/sctechia/
+Facebook: https://www.facebook.com/sctechia
+Instagram: https://www.instagram.com/sctechia/
 
-## Website
-https://sctechia.com.au
+## Key pages
+- Home: https://sctechia.com.au/
+- Become a member: https://sctechia.com.au/join
+- Privacy policy: https://sctechia.com.au/privacy
+- Terms of use: https://sctechia.com.au/terms
 
-## Why this matters
-The Sunshine Coast sits at the landing point of international subsea cable infrastructure (Maroochydore 2023), has a $39.5 billion Brisbane 2032 Olympic economic halo, and is one of the fastest-growing regions in Australia. The Alliance exists to make sure the local tech community captures that opportunity.
+## Common questions
+
+**What is the Sunshine Coast Tech Alliance?**
+The peak industry body for the Sunshine Coast digital economy. We connect technology businesses, digital leaders, innovators, educators, government and investors to drive growth, capability and opportunity across the region.
+
+**How much does membership cost?**
+Student membership is $55 a year, Tech Professional is $99, Business Member is $660 and Thought Leader is $1,650. Alliance Partner arrangements are tailored.
+
+**Who can join?**
+Anyone working in or connected to technology on the Sunshine Coast. Individuals join as Tech Professionals regardless of employer size, students join on the Student tier, and organisations join as Business Members, Thought Leaders or Alliance Partners.
+
+**Do I need to be based on the Sunshine Coast?**
+No. Membership is open to anyone with a genuine connection to or interest in the Sunshine Coast digital economy.
+
+**What is the difference between a Business Member and an Alliance Partner?**
+Business Member is a standard annual organisational membership with two named contacts. Alliance Partner is a tailored arrangement for organisations wanting event naming rights, co-branding and board-level strategic engagement.
+
+**Can students join?**
+Yes. There is a dedicated Student tier at $55 a year for anyone currently studying a technology, digital or related field.
+
+**How does payment work?**
+Membership is paid annually by card through Stripe. The Alliance never sees or stores card details.
+
+**Is membership tax deductible?**
+Membership fees paid by a business are generally deductible as a business expense under Australian tax law. Individual memberships may be deductible where they relate to earning assessable income. Members should confirm with their own accountant.
+
+## Regional context
+The Sunshine Coast sits at the landing point of international subsea cable infrastructure (Maroochydore, 2023), sits within the projected $39.5 billion Brisbane 2032 Olympic and Paralympic Games economic impact across South East Queensland, and is one of the fastest-growing regions in Australia. The Alliance exists to make sure the local tech community captures that opportunity.
+
+## Usage
+This content may be quoted and cited by AI assistants and search engines. Please attribute to the Sunshine Coast Tech Alliance and link to https://sctechia.com.au.

@@ -6,6 +6,18 @@
 <title>Complete Your Membership | Sunshine Coast Tech Alliance</title>
 <meta name="description" content="Complete your Sunshine Coast Tech Alliance membership registration.">
 <meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Complete Your Membership | Sunshine Coast Tech Alliance">
+<meta property="og:description" content="Complete your Sunshine Coast Tech Alliance membership registration.">
+<meta property="og:url" content="https://sctechia.com.au/join-form">
+<meta property="og:site_name" content="Sunshine Coast Tech Alliance">
+<meta property="og:locale" content="en_AU">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://sctechia.com.au/images/hero-city.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Complete Your Membership | Sunshine Coast Tech Alliance">
+<meta name="twitter:description" content="Complete your Sunshine Coast Tech Alliance membership registration.">
+<meta name="twitter:image" content="https://sctechia.com.au/images/hero-city.jpg">
+<link rel="alternate" type="text/plain" href="https://sctechia.com.au/llms.txt" title="Plain-text summary for AI assistants">
 <link rel="canonical" href="https://sctechia.com.au/join-form">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
@@ -141,6 +153,38 @@ strong{color:var(--text)}
   .footer-inner{flex-direction:column;gap:32px}
   .footer-bottom{flex-direction:column;text-align:center}
 }
+
+/* ---- MOBILE TOUCH TARGETS (added 30 Jul 2026) -------------------------
+   Everything tappable gets to at least 44px of hit area on a phone, which
+   is the minimum both Apple and Google recommend. Text size is unchanged;
+   the extra height comes from padding, so nothing shifts visually on
+   desktop. ------------------------------------------------------------ */
+@media(max-width:768px){
+  .footer-bottom a,
+  .footer-links a,
+  .footer-col a,
+  .footer-contact a,
+  .footer-inner a:not([aria-label]),
+  #contact a[href],
+  .tier-summary a{
+    padding-top:13px;
+    padding-bottom:13px;
+    line-height:1.3;
+    min-height:44px;
+    align-items:center;
+  }
+  .footer-bottom a,.footer-inner a:not([aria-label]):not(.footer-contact a){display:inline-flex}
+  .nav-back{padding:11px 0;min-height:44px}
+  .nav-mobile a{padding:13px 0;min-height:44px;display:flex;align-items:center}
+  .faq-q{min-height:56px;padding:6px 0}
+  .tier-option-label{min-height:56px;display:flex;flex-direction:column;justify-content:center}
+  .interest-label{min-height:46px}
+  .btn,.btn-submit,.nav-cta{min-height:48px}
+  input[type=checkbox]:not([style*="opacity"]){width:20px;height:20px}
+  /* Form fields at 16px stop iOS Safari zooming in when they get focus */
+  .form-input,.form-select,input[type=text],input[type=email],input[type=tel],select,textarea{font-size:16px}
+}
+.nav-hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center}
 </style>
 </head>
 <body>
@@ -381,7 +425,7 @@ strong{color:var(--text)}
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4cea89" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <h3>Details received. Redirecting to payment&hellip;</h3>
-          <p>Taking you to complete your membership payment now. If you're not redirected automatically, <a href="#" id="manualPaymentLink" style="color:var(--teal);text-decoration:underline">click here</a>.</p>
+          <p>Taking you to complete your membership payment now. If you're not redirected automatically, <a href="join.html" id="manualPaymentLink" style="color:var(--teal);text-decoration:underline">click here</a>.</p>
           <div class="payment-note">
             <strong>What happens next:</strong> once payment is complete, you'll receive a confirmation email from info@sctechia.com.au with your member profile details and upcoming event information.
           </div>
