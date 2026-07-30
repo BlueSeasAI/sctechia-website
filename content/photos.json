@@ -1,0 +1,49 @@
+{
+  "photos": [
+    {
+      "image": "/images/events/speaker-panel.jpg",
+      "alt": "A speaker addressing members at a Sunshine Coast Tech Alliance Barside Natter event",
+      "placement": "homepage"
+    },
+    {
+      "image": "/images/events/audience.jpg",
+      "alt": "Members seated and listening at a Sunshine Coast Tech Alliance event",
+      "placement": "homepage"
+    },
+    {
+      "image": "/images/events/members-group.jpg",
+      "alt": "Five Sunshine Coast Tech Alliance members together at a networking evening",
+      "placement": "homepage"
+    },
+    {
+      "image": "/images/events/networking.jpg",
+      "alt": "Two members in conversation at a Sunshine Coast Tech Alliance networking event",
+      "placement": "homepage"
+    },
+    {
+      "image": "/images/events/candid.jpg",
+      "alt": "A member laughing during a Sunshine Coast Tech Alliance Barside Natter",
+      "placement": "homepage"
+    },
+    {
+      "image": "/images/events/members-group.jpg",
+      "alt": "Five Sunshine Coast Tech Alliance members together at a networking evening",
+      "placement": "join"
+    },
+    {
+      "image": "/images/events/audience.jpg",
+      "alt": "Members seated and listening at a Sunshine Coast Tech Alliance event",
+      "placement": "join"
+    },
+    {
+      "image": "/images/events/board-outdoors.jpg",
+      "alt": "Sunshine Coast Tech Alliance board members with the Alliance banner",
+      "placement": "join"
+    },
+    {
+      "image": "/images/events/board-outdoors.jpg",
+      "alt": "Sunshine Coast Tech Alliance board members with the Alliance banner",
+      "placement": "about"
+    }
+  ]
+}

@@ -111,6 +111,23 @@ for m in members:
     if not os.path.exists(m['logo'].lstrip('/')):
         fail('members.json', 'missing logo file: ' + m['logo'])
 
+photos = json.load(open('content/photos.json', encoding='utf-8'))['photos']
+VALID_PLACEMENTS = {'homepage': 5, 'join': 3, 'about': 1}
+for p in photos:
+    if not os.path.exists(p['image'].lstrip('/')):
+        fail('photos.json', 'missing photo file: ' + p['image'])
+    if p['placement'] not in VALID_PLACEMENTS:
+        fail('photos.json', 'unknown placement "%s"' % p['placement'])
+    if len(p.get('alt', '')) < 10:
+        fail('photos.json', 'alt text too short for ' + p['image'])
+    size = os.path.getsize(p['image'].lstrip('/')) if os.path.exists(p['image'].lstrip('/')) else 0
+    if size > 600 * 1024:
+        warn('photos.json', '%s is %dKB, over the 600KB guide' % (p['image'], size // 1024))
+for place, slots in VALID_PLACEMENTS.items():
+    got = len([p for p in photos if p['placement'] == place])
+    if got < slots:
+        warn('photos.json', '%s shows %d photos but only %d tagged' % (place, slots, got))
+
 if len(faqs) < 5:
     warn('faq.json', 'only %d questions' % len(faqs))
 

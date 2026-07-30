@@ -439,6 +439,27 @@ strong{color:var(--text)}
   .board-grid{grid-template-columns:1fr 1fr}
 }
 
+/* ---- EVENT PHOTO BAND -------------------------------------------------
+   Five photos from past events. Loads from /content/photos.json so the
+   board can swap them at /admin/. Asymmetric grid: one tall feature on
+   the left, four smaller alongside. --------------------------------- */
+.photos-section{padding:0 0 100px}
+.photo-band{display:grid;grid-template-columns:1.55fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:440px;margin-top:36px}
+.photo-band figure{margin:0;overflow:hidden;border-radius:14px;border:1px solid var(--glass-b);position:relative;background:var(--dark-surf)}
+.photo-band figure:first-child{grid-row:span 2}
+.photo-band img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.photo-band figure:hover img{transform:scale(1.04)}
+.photo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 0 8px}
+.photo-strip figure{margin:0;overflow:hidden;border-radius:14px;border:1px solid var(--glass-b);background:var(--dark-surf);aspect-ratio:4/3}
+.photo-strip img{width:100%;height:100%;object-fit:cover;display:block}
+.about-photo{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--glass-b);background:var(--dark-surf)}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3}
+@media(max-width:768px){
+  .photo-band{grid-template-columns:1fr 1fr;grid-template-rows:200px 140px 140px;height:auto}
+  .photo-band figure:first-child{grid-row:span 1;grid-column:span 2}
+  .photo-strip{grid-template-columns:1fr;gap:12px}
+}
+
 /* ---- MOBILE TOUCH TARGETS (added 30 Jul 2026) -------------------------
    Everything tappable gets to at least 44px of hit area on a phone, which
    is the minimum both Apple and Google recommend. Text size is unchanged;
@@ -537,7 +558,9 @@ strong{color:var(--text)}
       <h2 id="about-heading">We are the <span class="teal-text">gateway</span> to the region's digital future.</h2>
       <p>The Sunshine Coast Tech Alliance is the peak industry body representing and connecting the Sunshine Coast digital economy. We bring together technology businesses, digital leaders, innovators, educators, government, investors and industry to drive growth, capability and opportunity across the region.</p>
       <p>As an independent, industry-led organisation, we champion the people, businesses and technologies shaping the future of the Sunshine Coast and ensure our region is recognised as a leading destination for innovation, digital transformation and technology-enabled growth.</p>
-      <div style="display:flex;gap:48px;flex-wrap:wrap;margin-top:32px;padding-top:28px;border-top:1px solid var(--border)">
+      <!-- Vision and mission, with the board photo alongside on desktop. -->
+      <div class="split-grid" style="margin-top:32px;padding-top:28px;border-top:1px solid var(--border);gap:44px;align-items:center">
+      <div style="display:flex;gap:48px;flex-wrap:wrap">
         <div>
           <div class="label" style="margin-bottom:6px">Vision</div>
           <p style="margin:0;font-size:.9rem;color:var(--text-dim);max-width:340px;line-height:1.65">A thriving Sunshine Coast digital economy recognised nationally for innovation, capability and collaboration.</p>
@@ -546,6 +569,8 @@ strong{color:var(--text)}
           <div class="label" style="margin-bottom:6px">Mission</div>
           <p style="margin:0;font-size:.9rem;color:var(--text-dim);line-height:1.65;max-width:340px">Connecting, growing and representing the Sunshine Coast digital economy.</p>
         </div>
+      </div>
+      <figure class="about-photo" id="aboutPhoto" hidden></figure>
       </div>
     </div>
   </div>
@@ -667,6 +692,18 @@ strong{color:var(--text)}
       <!-- Rendered from /content/events.json by the script at the bottom of this page.
            Editable by the board admin at /admin/ (Decap CMS) - nobody needs to touch this HTML to add/remove/update an event. -->
     </div>
+  </div>
+</section>
+
+<!-- EVENT PHOTOS -->
+<section class="photos-section" id="photos" role="region" aria-labelledby="photos-heading">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">The Alliance in action</span>
+      <h2 id="photos-heading">Where the Sunshine Coast tech community <span class="teal-text">actually meets</span>.</h2>
+    </div>
+    <!-- Rendered from /content/photos.json by the script at the bottom of this page. -->
+    <div class="photo-band reveal" id="photoBand"></div>
   </div>
 </section>
 
@@ -991,6 +1028,30 @@ fetch('/content/board.json').then(r => r.json()).then(data => renderBoard(data.m
 });
 fetch('/content/events.json').then(r => r.json()).then(data => renderEvents(data.events || [])).catch(() => {
   document.getElementById('eventsGrid').innerHTML = '<p style="color:var(--text-muted)">Events are temporarily unavailable.</p>';
+});
+// EVENT PHOTOS - load from /content/photos.json so the board can swap the
+// pictures at /admin/ without touching HTML. Each photo carries a placement,
+// which decides where on the site it appears.
+function renderPhotos(photos) {
+  const pick = p => photos.filter(x => x.placement === p);
+  const fig = x => `<figure><img src="${escapeHtml(x.image)}" alt="${escapeHtml(x.alt)}" loading="lazy" decoding="async"></figure>`;
+
+  const band = document.getElementById('photoBand');
+  const home = pick('homepage').slice(0, 5);
+  if (band) {
+    if (home.length) { band.innerHTML = home.map(fig).join(''); }
+    else { const s = document.getElementById('photos'); if (s) s.hidden = true; }
+  }
+
+  const about = document.getElementById('aboutPhoto');
+  const one = pick('about')[0];
+  if (about && one) {
+    about.innerHTML = `<img src="${escapeHtml(one.image)}" alt="${escapeHtml(one.alt)}" loading="lazy" decoding="async">`;
+    about.hidden = false;
+  }
+}
+fetch('/content/photos.json').then(r => r.json()).then(d => renderPhotos(d.photos || [])).catch(() => {
+  const s = document.getElementById('photos'); if (s) s.hidden = true;
 });
 fetch('/content/members.json').then(r => r.json()).then(data => renderMembers(data.members || [])).catch(() => {});
 </script>

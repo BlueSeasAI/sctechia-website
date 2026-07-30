@@ -2,10 +2,10 @@ backend:
   name: git-gateway
   branch: main
 
-# Five things are editable here: events, board members, membership pricing,
-# member logos and the common questions. Nothing else on the site (focus
-# areas, hero copy, footer, nav) has a field here, so it cannot be touched
-# through this admin panel.
+# Six things are editable here: events, board members, membership pricing,
+# member logos, the common questions and the event photos. Nothing else on
+# the site (focus areas, hero copy, footer, nav) has a field here, so it
+# cannot be touched through this admin panel.
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -115,3 +115,21 @@ collections:
             fields:
               - { label: "❓ Question", name: "question", widget: "string" }
               - { label: "💬 Answer", name: "answer", widget: "text", hint: "Plain text. Keep it to a paragraph so the answer opens cleanly." }
+
+  - name: "photos"
+    label: "📸 Event Photos"
+    label_singular: "Photo"
+    description: "Photos from past events, shown on the homepage, the Become a Member page and the About section."
+    files:
+      - file: "content/photos.json"
+        label: "📸 Event Photos"
+        name: "photos"
+        fields:
+          - label: "Photos"
+            name: "photos"
+            widget: "list"
+            summary: "📸 {{alt}} ({{placement}})"
+            fields:
+              - { label: "📸 Photo", name: "image", widget: "image", hint: "Landscape photos work best. Very large files will slow the page down, so keep them under about 500KB." }
+              - { label: "📝 Description of the photo", name: "alt", widget: "string", hint: "A short description of what is happening, read aloud to people using a screen reader. For example 'Members talking at a Barside Natter evening'." }
+              - { label: "📍 Where it appears", name: "placement", widget: "select", default: "homepage", options: [{ label: "🏠 Homepage band (uses the first 5)", value: "homepage" }, { label: "💳 Become a Member page (uses the first 3)", value: "join" }, { label: "ℹ️ About section (uses the first 1)", value: "about" }], hint: "To show the same photo in two places, add it twice and give each entry a different location." }
