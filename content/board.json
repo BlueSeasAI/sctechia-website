@@ -16,8 +16,9 @@
     {
       "name": "Tracey Coobula",
       "role": "Secretary",
-      "company": "RDA Moreton Bay & Sunshine Coast",
-      "photo": "/images/board/tracey-coobula.jpg"
+      "company": "Sunshine Coast Regional Jobs Committee",
+      "photo": "/images/board/tracey-coobula.jpg",
+      "bio": "Regional workforce leader driving partnerships, innovation and skills to grow thriving communities and future industries."
     },
     {
       "name": "Damien Hicks",
@@ -53,7 +54,8 @@
       "name": "Bianca Manski",
       "role": "Board Member",
       "company": "NAB",
-      "photo": "/images/board/bianca-manski.jpg"
+      "photo": "/images/board/bianca-manski.jpg",
+      "bio": "Senior Business Banker at NAB passionate about connecting people and seeing how the tech industry can grow on the Sunshine Coast"
     },
     {
       "name": "Bart Puszko",

@@ -119,7 +119,7 @@
           "jobTitle": "Secretary",
           "worksFor": {
             "@type": "Organization",
-            "name": "RDA Moreton Bay & Sunshine Coast"
+            "name": "Sunshine Coast Regional Jobs Committee"
           }
         },
         {
@@ -345,12 +345,21 @@ strong{color:var(--text)}
 .event-footer{padding:0 24px 20px;display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--text-muted)}
 
 
-/* MARQUEE */
+/* MARQUEE
+   Two identical logo sets sit side by side and each slides left by its own
+   width, so the loop closes seamlessly. It used to be one element of
+   width:max-content sliding by -50%, which made a single composited layer
+   several thousand pixels wide. iOS Safari reserved the space for that layer
+   but painted it blank once the page had been scrolled, so on an iPhone the
+   band showed a heading and then nothing (reported by Tracey, 30 Jul 2026).
+   Two half-width layers, promoted explicitly with translate3d, avoid it -
+   and phones skip the animation entirely, see the static block below. */
 .marquee-section{padding:52px 0;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .marquee-label{text-align:center;margin-bottom:28px;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
-.marquee-track{display:flex;gap:14px;animation:marqueeScroll 52s linear infinite;width:max-content}
-.marquee-track:hover{animation-play-state:paused}
-@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-viewport{display:flex;overflow:hidden}
+.marquee-set{display:flex;gap:14px;padding-right:14px;flex:0 0 auto;animation:marqueeScroll 52s linear infinite;backface-visibility:hidden}
+.marquee-viewport:hover .marquee-set{animation-play-state:paused}
+@keyframes marqueeScroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-100%,0,0)}}
 .member-chip{display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:14px 24px;background:rgba(255,255,255,0.96);border-radius:12px;border:1px solid rgba(0,0,0,0.06);transition:box-shadow .2s,transform .2s}
 .member-chip:hover{box-shadow:0 6px 20px rgba(0,0,0,0.14);transform:translateY(-2px)}
 .partner-logo{height:44px;width:auto;max-width:220px}
@@ -358,6 +367,20 @@ strong{color:var(--text)}
    logos with a lot of white space around the mark. */
 .partner-logo.logo-darken{filter:brightness(0)}
 .partner-logo.logo-large{height:64px;max-width:300px}
+/* Static fallback - phones, and anyone who has asked their device for
+   reduced motion. Every member is on screen at once instead of waiting for
+   the band to come round, and there is no animated layer left to break.
+   display:contents drops the two set wrappers so the chips become grid
+   items; the duplicate set is hidden because nothing is looping. */
+@media (max-width:768px), (prefers-reduced-motion:reduce){
+  .marquee-section{overflow:visible}
+  .marquee-viewport{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:10px;max-width:1180px;margin:0 auto;padding:0 20px;overflow:visible}
+  .marquee-set{display:contents;animation:none}
+  .marquee-set.is-clone{display:none}
+  .member-chip{padding:12px 14px}
+  .partner-logo{height:34px;max-width:100%}
+  .partner-logo.logo-large{height:42px;max-width:100%}
+}
 
 /* BOARD */
 .board-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:48px 0 0}
@@ -711,9 +734,14 @@ strong{color:var(--text)}
 <div class="marquee-section" id="members" role="region" aria-label="Member and partner organisations">
   <p class="marquee-label">Member &amp; Partner Organisations</p>
   <!-- Logos load from /content/members.json so the board can add and remove
-       member logos at /admin/ without touching HTML. The loop duplicate is
-       generated in the script at the bottom of this page. -->
-  <div class="marquee-track" id="memberTrack" aria-hidden="true"></div>
+       member logos at /admin/ without touching HTML. Two sets: the first is
+       the real list, the second is the loop duplicate and is hidden from
+       screen readers so the names are not read out twice. Both are filled by
+       the script at the bottom of this page. -->
+  <div class="marquee-viewport">
+    <div class="marquee-set" id="memberSet"></div>
+    <div class="marquee-set is-clone" id="memberSetClone" aria-hidden="true"></div>
+  </div>
 </div>
 
 <!-- MANAGEMENT COMMITTEE -->
@@ -1008,19 +1036,23 @@ function renderEvents(events) {
 }
 
 // MEMBER & PARTNER LOGOS - load from /content/members.json so the board can
-// add and remove logos at /admin/ as members onboard and offboard. The list
-// is rendered twice so the marquee loops without a visible seam.
+// add and remove logos at /admin/ as members onboard and offboard. The same
+// list goes into both sets: the second is the loop duplicate that lets the
+// band scroll without a visible seam, and it is hidden on phones where the
+// band is a static grid instead.
 function renderMembers(members) {
-  const track = document.getElementById('memberTrack');
-  if (!track) return;
+  const set = document.getElementById('memberSet');
+  const clone = document.getElementById('memberSetClone');
+  if (!set || !clone) return;
   const chip = m => {
     const cls = ['partner-logo'];
     if (m.darken) cls.push('logo-darken');
     if (m.size === 'large') cls.push('logo-large');
     return `<div class="member-chip"><img src="${escapeHtml(m.logo)}" alt="${escapeHtml(m.name)}" class="${cls.join(' ')}"></div>`;
   };
-  const set = members.map(chip).join('');
-  track.innerHTML = set + set;
+  const html = members.map(chip).join('');
+  set.innerHTML = html;
+  clone.innerHTML = html;
 }
 
 fetch('/content/board.json').then(r => r.json()).then(data => renderBoard(data.members || [])).catch(() => {

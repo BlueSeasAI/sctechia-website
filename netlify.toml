@@ -21,11 +21,19 @@
 
 # Admin (Decap CMS) needs a looser CSP to load its bundle + Netlify Identity -
 # scoped to /admin/* only, rest of the site keeps the strict policy above.
+#
+# blob: is required in connect-src, img-src and default-src. When an editor
+# picks an image, Decap holds it as a blob URL and then does fetch(blobURL) to
+# read the bytes back before committing. Without blob: in connect-src that
+# fetch is blocked by CSP and Decap reports "Failed to persist entry:
+# TypeError: Failed to fetch" - which is exactly what Will hit on 30 Jul 2026
+# adding a logo to the member wheel. Text-only saves never touch a blob, which
+# is why every other edit worked. Do not remove blob: from these three lists.
 [[headers]]
   for = "/admin/*"
   [headers.values]
     X-Robots-Tag = "noindex"
-    Content-Security-Policy = "default-src 'self' https://unpkg.com https://identity.netlify.com https://api.netlify.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.netlify.com https://identity.netlify.com https://*.netlify.app https://api.github.com; frame-src 'self' https://identity.netlify.com;"
+    Content-Security-Policy = "default-src 'self' blob: https://unpkg.com https://identity.netlify.com https://api.netlify.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' blob: data: https://api.netlify.com https://identity.netlify.com https://*.netlify.app https://api.github.com; worker-src 'self' blob:; frame-src 'self' https://identity.netlify.com;"
 
 # Redirects
 [[redirects]]
