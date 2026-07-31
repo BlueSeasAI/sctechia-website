@@ -1,51 +1,55 @@
 {
   "tiers": [
     {
-      "id": "student",
-      "badgeLabel": "Student",
-      "badgeStyle": "student",
+      "period": "Annual membership • Billed once a year",
+      "ctaTarget": "",
+      "ctaLabel": "Join for $55/yr",
+      "ctaType": "join",
       "name": "Student",
       "priceMode": "amount",
+      "featured": false,
+      "badgeStyle": "student",
+      "badgeLabel": "Student",
       "priceDisplay": "55",
-      "period": "Annual membership • Billed once a year",
+      "id": "student",
       "description": "For current students studying technology, digital or a related field on the Sunshine Coast. Full access to events and the Alliance community while you study.",
       "features": [
         "Access to all member events",
         "Barside Natter networking events"
-      ],
-      "featured": false,
-      "ctaLabel": "Join for $55/yr",
-      "ctaType": "join",
-      "ctaTarget": ""
+      ]
     },
     {
-      "id": "individual",
-      "badgeLabel": "Individual",
-      "badgeStyle": "entry",
+      "period": "Annual membership • Billed once a year",
+      "ctaTarget": "",
+      "ctaLabel": "Join for $99/yr",
+      "ctaType": "join",
       "name": "Tech Professional",
       "priceMode": "amount",
-      "priceDisplay": "99",
-      "period": "Annual membership • Billed once a year",
+      "featured": false,
+      "badgeStyle": "entry",
+      "badgeLabel": "Individual",
+      "priceDisplay": "99999999",
+      "id": "individual",
       "description": "For individual tech professionals, founders and freelancers. Full access to events and the Alliance community.",
       "features": [
         "Access to all member events",
-        "Barside Natter networking events",
+        "Barside Natter networking events and other stuff g",
         "Discounted Tech Summit tickets",
         "Voting rights at Annual General Meetings"
-      ],
-      "featured": false,
-      "ctaLabel": "Join for $99/yr",
-      "ctaType": "join",
-      "ctaTarget": ""
+      ]
     },
     {
-      "id": "business",
-      "badgeLabel": "Most Popular",
-      "badgeStyle": "popular",
+      "period": "Annual membership • Includes Two named contacts",
+      "ctaTarget": "",
+      "ctaLabel": "Join for $660/yr",
+      "ctaType": "join",
       "name": "Business Member",
       "priceMode": "amount",
+      "featured": true,
+      "badgeStyle": "popular",
+      "badgeLabel": "Most Popular",
       "priceDisplay": "660",
-      "period": "Annual membership • Includes Two named contacts",
+      "id": "business",
       "description": "For technology businesses and digital-first companies. Two member contacts, your logo on the website and speaking opportunities at events.",
       "features": [
         "Everything in Tech Professional",
@@ -55,20 +59,20 @@
         "Speaking & thought leadership opportunities",
         "Advocacy and government engagement",
         "Voting rights at Annual General Meetings"
-      ],
-      "featured": true,
-      "ctaLabel": "Join for $660/yr",
-      "ctaType": "join",
-      "ctaTarget": ""
+      ]
     },
     {
-      "id": "thought-leader",
-      "badgeLabel": "Thought Leader",
-      "badgeStyle": "leader",
+      "period": "Annual membership • Includes Three named contacts",
+      "ctaTarget": "",
+      "ctaLabel": "Join for $1,650/yr",
+      "ctaType": "join",
       "name": "Thought Leader",
       "priceMode": "amount",
+      "featured": false,
+      "badgeStyle": "leader",
+      "badgeLabel": "Thought Leader",
       "priceDisplay": "1,650",
-      "period": "Annual membership • Includes Three named contacts",
+      "id": "thought-leader",
       "description": "For established leaders and companies wanting to shape conversations, build profile and access strategic opportunities in the Sunshine Coast digital economy.",
       "features": [
         "Everything in Business Member",
@@ -79,20 +83,20 @@
         "Industry working group & advisory access",
         "Priority board engagement & briefings",
         "Voting rights at Annual General Meetings"
-      ],
-      "featured": false,
-      "ctaLabel": "Join for $1,650/yr",
-      "ctaType": "join",
-      "ctaTarget": ""
+      ]
     },
     {
-      "id": "partner",
-      "badgeLabel": "Partner / Corporate",
-      "badgeStyle": "enterprise",
+      "period": "Tailored partnership arrangements",
+      "ctaTarget": "info@sctechia.com.au?subject=Alliance%20Partner%20Enquiry",
+      "ctaLabel": "Get in touch",
+      "ctaType": "mailto",
       "name": "Alliance Partner",
       "priceMode": "contact",
+      "featured": false,
+      "badgeStyle": "enterprise",
+      "badgeLabel": "Partner / Corporate",
       "priceDisplay": "",
-      "period": "Tailored partnership arrangements",
+      "id": "partner",
       "description": "For organisations wanting deep engagement, co-branding, event sponsorship and strategic partnership with the Sunshine Coast tech community.",
       "features": [
         "Everything in Business Member",
@@ -100,11 +104,7 @@
         "Co-branding on Alliance materials",
         "Board-level strategic engagement",
         "Custom arrangements for enterprise needs"
-      ],
-      "featured": false,
-      "ctaLabel": "Get in touch",
-      "ctaType": "mailto",
-      "ctaTarget": "info@sctechia.com.au?subject=Alliance%20Partner%20Enquiry"
+      ]
     }
   ]
 }
