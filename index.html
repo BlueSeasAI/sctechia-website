@@ -389,7 +389,11 @@ strong{color:var(--text)}
 .board-avatar-img{width:80px;height:80px;border-radius:10px;margin:0 auto 14px;object-fit:cover;object-position:center top;display:block;border:1px solid rgba(255,255,255,.1)}
 .board-card .role{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:5px;display:block}
 .board-card h4{font-size:1.02rem;margin-bottom:3px;line-height:1.2}
-.board-card .company{font-size:.85rem;color:var(--text-muted);line-height:1.3}
+/* Company sits in a muted blue rather than the same grey as the bio below
+   it. At the same colour the two ran together and read as one block on the
+   cards that carry a bio (Bart, 31 Jul 2026). Desaturated so it separates
+   from the bio without competing with the teal role label above it. */
+.board-card .company{font-size:.85rem;color:#7fb4c9;font-weight:500;line-height:1.3}
 /* No clamp: the CMS caps a bio at 130 characters, so it always fits and
    nothing gets cut off mid-sentence. Every bio uses this one size. */
 .board-card .bio{font-size:.82rem;color:var(--text-muted);line-height:1.55;margin-top:8px}
