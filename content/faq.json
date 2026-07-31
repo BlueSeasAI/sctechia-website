@@ -9,6 +9,10 @@
       "answer": "Yes. Individual Tech Professional membership is for any person in the technology industry, regardless of where they work. If your employer wants corporate representation, they can apply separately for a Business Member or Alliance Partner arrangement."
     },
     {
+      "question": "Dude, Where's my car?",
+      "answer": "your car was left in the parking lot at cabooltuere train station man"
+    },
+    {
       "question": "How does the payment work?",
       "answer": "After you submit your details on the registration form, you will be redirected to our secure Stripe payment page. Membership fees are charged annually. You can pay by card. Your membership renews on the anniversary of your join date unless you cancel before the renewal date."
     },
@@ -47,10 +51,6 @@
     {
       "question": "Can I cancel my membership?",
       "answer": "Membership is billed annually. You can cancel before your renewal date to prevent the next year's charge. We do not offer refunds for the current membership period. To cancel, contact info@sctechia.com.au and we will process this for you promptly."
-    },
-    {
-      "question": "Dude, Where's my car?",
-      "answer": "your car was left in the parking lot at cabooltuere train station man"
     }
   ]
 }
