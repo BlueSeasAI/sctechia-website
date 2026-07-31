@@ -28,12 +28,12 @@
       "featured": false,
       "badgeStyle": "entry",
       "badgeLabel": "Individual",
-      "priceDisplay": "99999999",
+      "priceDisplay": "99",
       "id": "individual",
       "description": "For individual tech professionals, founders and freelancers. Full access to events and the Alliance community.",
       "features": [
         "Access to all member events",
-        "Barside Natter networking events and other stuff g",
+        "Barside Natter networking events ",
         "Discounted Tech Summit tickets",
         "Voting rights at Annual General Meetings"
       ]
