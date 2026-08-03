@@ -71,12 +71,6 @@
       "logo": "/images/logos/walker-corp-logo.png",
       "size": "standard",
       "darken": false
-    },
-    {
-      "size": "large",
-      "darken": false,
-      "name": "bomboclaat",
-      "logo": "/images/uploads/kcc-40yr-logo_final.png"
     }
   ]
 }
