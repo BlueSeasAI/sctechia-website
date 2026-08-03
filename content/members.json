@@ -71,12 +71,6 @@
       "logo": "/images/logos/walker-corp-logo.png",
       "size": "standard",
       "darken": false
-    },
-    {
-      "size": "standard",
-      "darken": false,
-      "name": "KCC",
-      "logo": "/images/uploads/kcc-40yr-logo_final.png"
     }
   ]
 }
