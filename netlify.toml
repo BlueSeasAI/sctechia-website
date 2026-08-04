@@ -36,6 +36,29 @@
     Content-Security-Policy = "default-src 'self' blob: https://unpkg.com https://identity.netlify.com https://api.netlify.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' blob: data: https://api.netlify.com https://identity.netlify.com https://*.netlify.app https://api.github.com; worker-src 'self' blob:; frame-src 'self' https://identity.netlify.com;"
 
 # Redirects
+#
+# Domain consolidation (4 Aug 2026): sctechia.au and www.sctechia.au are
+# aliases on the same Netlify site, so without these rules they SERVE the site
+# rather than pointing at it - two addresses showing identical content, which
+# splits search ranking between them. These send both to the primary domain.
+#
+# force = true is required. Netlify normally lets a real file win over a
+# redirect rule, and "/" matches index.html, so without force these never fire.
+#
+# Keep these FIRST: rules are matched in order, and a request to
+# sctechia.au/membership should leave the domain before the path rules run.
+[[redirects]]
+  from = "https://sctechia.au/*"
+  to = "https://sctechia.com.au/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.sctechia.au/*"
+  to = "https://sctechia.com.au/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/join/"
   to = "/join.html"
