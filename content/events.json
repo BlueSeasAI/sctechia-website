@@ -1,6 +1,14 @@
 {
   "events": [
     {
+      "title": "AI Discovery Lab: Four AI Foundations for Business Transformation",
+      "dateLabel": "19th August 2026",
+      "tag": "Networking",
+      "description": "Ready to unlock the potential of AI in your business? Join us for the AI Discovery Lab, a practical and interactive morning featuring local AI experts, real-world insights and networking opportunities. Explore the foundations of AI adoption and discover strategies to help your business thrive in an AI-powered future.",
+      "location": "Altitude Nine, South Sea Islander Way, Maroochydore QLD 4558",
+      "moreInfoUrl": "https://getsafeticket.com.au/rpa45"
+    },
+    {
       "title": "Barside Natter Q3 2026",
       "dateLabel": "Coming soon",
       "tag": "Networking",
@@ -23,14 +31,6 @@
       "description": "Informal member-driven networking. No agenda, no slides. Just good conversations with people who are building things on the Sunshine Coast.",
       "location": "Rotating Sunshine Coast venues",
       "moreInfoUrl": ""
-    },
-    {
-      "title": "AI Discovery Lab: Four AI Foundations for Business Transformation",
-      "dateLabel": "19th August 2026",
-      "tag": "Networking",
-      "description": "Ready to unlock the potential of AI in your business? Join us for the AI Discovery Lab, a practical and interactive morning featuring local AI experts, real-world insights and networking opportunities. Explore the foundations of AI adoption and discover strategies to help your business thrive in an AI-powered future.",
-      "location": "Altitude Nine, South Sea Islander Way, Maroochydore QLD 4558",
-      "moreInfoUrl": "https://getsafeticket.com.au/rpa45"
     }
   ]
 }
