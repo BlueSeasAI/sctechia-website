@@ -71,6 +71,12 @@
       "logo": "/images/logos/walker-corp-logo.png",
       "size": "standard",
       "darken": false
+    },
+    {
+      "size": "standard",
+      "darken": false,
+      "logo": "/images/uploads/a6c42904-4006-4fb7-b732-3e0342521a15.png",
+      "name": "Coastal Cyber"
     }
   ]
 }
