@@ -80,7 +80,7 @@
     },
     {
       "size": "large",
-      "darken": false,
+      "darken": true,
       "name": "Let's talk Quantum",
       "logo": "/images/uploads/2026-sctechia-insta-tiles-17-.png"
     }
