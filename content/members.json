@@ -79,8 +79,8 @@
       "name": "Coastal Cyber"
     },
     {
-      "size": "standard",
-      "darken": true,
+      "size": "large",
+      "darken": false,
       "name": "Let's talk Quantum",
       "logo": "/images/uploads/2026-sctechia-insta-tiles-17-.png"
     }
